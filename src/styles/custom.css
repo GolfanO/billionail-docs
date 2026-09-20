@@ -1,0 +1,43 @@
+:root {
+	--sl-content-width: 48rem;
+	--sl-color-accent-low: #3d1228;
+	--sl-color-accent: #e85a9b;
+	--sl-color-accent-high: #f8c4d8;
+	--bn-pink: #c2185b;
+	--bn-pink-soft: #fde8f0;
+}
+
+:root[data-theme='light'] {
+	--sl-color-accent-low: #fde8f0;
+	--sl-color-accent: #c2185b;
+	--sl-color-accent-high: #6b1238;
+	--sl-color-bg: #fff8fb;
+}
+
+/* Phone-first: keep body text readable and tables scrollable */
+.sl-markdown-content {
+	font-size: 1.05rem;
+	line-height: 1.7;
+}
+
+.sl-markdown-content table {
+	display: block;
+	max-width: 100%;
+	overflow-x: auto;
+}
+
+.bn-kicker {
+	display: inline-block;
+	margin-bottom: 0.4rem;
+	padding: 0.15rem 0.55rem;
+	border-radius: 999px;
+	background: var(--bn-pink-soft);
+	color: var(--bn-pink);
+	font-size: 0.85rem;
+	font-weight: 600;
+}
+
+:root[data-theme='dark'] .bn-kicker {
+	background: #3d1228;
+	color: #f8c4d8;
+}

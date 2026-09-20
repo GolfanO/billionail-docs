@@ -10,7 +10,9 @@
 | สะสมแต้ม (CRM) | https://docs.billionail.com/crm/ |
 | เครดิตสมาชิก | https://docs.billionail.com/credit/ |
 
-DNS ของ `docs.billionail.com` ยังไม่ตั้งในรีโปนี้ — เดพลอยสแตติกบน Vercel หรือ Cloudflare Pages แล้วชี้โดเมนทีหลัง
+เดพลอยด้วย GitHub Actions → GitHub Pages ทุกครั้งที่ push `main` (Vercel ลิงก์รีโปนี้ไม่ได้เพราะ GitHub App)
+
+DNS ของ `docs.billionail.com` **ยังไม่ตั้งในงานนี้** — Golf ตั้งที่ผู้ให้บริการโดเมนเอง
 
 ## รันบนเครื่อง
 
@@ -63,10 +65,42 @@ description: คู่มือแคชเชียร์จอคิดเง�
 
 หมวดที่ยังไม่มีหน้า: จุดขาย (`/pos/`), รายงาน (`/reports/`), ลงเวลา (`/timeclock/`)
 
+## เดพลอย GitHub Pages
+
+Workflow: `.github/workflows/deploy-pages.yml`  
+คำสั่งบิลด์: `pnpm i && pnpm build` แล้วอัปโหลดโฟลเดอร์ `dist/`  
+โดเมนในบิลด์: `public/CNAME` = `docs.billionail.com` (Astro คัดลอกเข้า `dist/`)
+
+### สิ่งที่ต้องเปิดในรีโป (ครั้งเดียว)
+
+GitHub App / Vercel ลิงก์รีโปนี้ไม่ได้ — ใช้ Pages แทน ตั้งค่าด้วยมือ:
+
+1. **Settings → Pages → Build and deployment → Source** เลือก **GitHub Actions**  
+   ถ้ายังไม่เลือก รัน workflow รอบแรกจะเดพลอยไม่ขึ้น — เลือกแล้วไปที่ Actions กด **Re-run** ของ workflow `Deploy docs to GitHub Pages`
+2. **Settings → Pages → Custom domain** ใส่ `docs.billionail.com` แล้ว Save  
+   ไฟล์ `CNAME` ในรีโปอย่างเดียวไม่พอ GitHub ต้องบันทึกโดเมนในหน้า Settings ด้วย
+3. รอใบรับรองแล้วติ๊ก **Enforce HTTPS**
+4. รีโปนี้เป็น private: ไซต์ Pages ยังเปิดสาธารณะบนอินเทอร์เน็ต ถ้าแพ็กเกจบัญชีไม่รองรับ Pages จากรีโป private ให้เช็กแผน GitHub
+
+หลังเดพลอยสำเร็จ GitHub จะโชว์ URL ประมาณ `https://golfano.github.io/billionail-docs/` จนกว่า DNS จะชี้โดเมนจริง
+
+### DNS ที่ Golf ต้องตั้ง (งานนี้ไม่ตั้งให้)
+
+ที่โซน `billionail.com`:
+
+| Type | Name | Target |
+| --- | --- | --- |
+| **CNAME** | **`docs`** | **`GolfanO.github.io`** |
+
+นั่นคือ `docs.billionail.com` → `GolfanO.github.io` (ไม่ใส่ path ท้าย เช่น `/billionail-docs` — CNAME ชี้ได้แค่โฮสต์)  
+ถ้าหน้า Settings → Pages โชว์โฮสต์คนละตัว ให้ใช้โฮสต์ที่ GitHub แสดงแทน
+
+อย่าสร้างระเบียนอื่นทับชื่อ `docs` (เช่น A หรือ CNAME ชี้ Vercel)
+
 ## สแต็ก
 
 - [Astro Starlight](https://starlight.astro.build/) — แถบหมวด + ค้นหา Pagefind
-- `output: 'static'` ใน `astro.config.mjs` — ไม่ต้องมีเซิร์ฟเวอร์ เดพลอย Vercel หรือ Cloudflare Pages ได้
+- `output: 'static'` ใน `astro.config.mjs` — ไม่ต้องมีเซิร์ฟเวอร์ เดพลอยด้วย GitHub Pages
 - ภาษาหลักคือไทย (`locales.root.lang = 'th'`) ไม่มี prefix `/th/`
 
 ## รูปหน้าจอ

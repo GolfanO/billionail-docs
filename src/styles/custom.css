@@ -41,3 +41,65 @@
 	background: #3d1228;
 	color: #f8c4d8;
 }
+
+/* POS shots: full-width stack on phones, sit beside steps on wider screens */
+.bn-step-shot {
+	display: grid;
+	gap: 1rem;
+	align-items: start;
+	margin: 0.75rem 0 1.5rem;
+}
+
+.bn-shot-stack {
+	display: grid;
+	gap: 0.85rem;
+}
+
+.bn-shot {
+	margin: 0;
+	border: 1px solid color-mix(in srgb, var(--bn-pink) 18%, #ead5de);
+	border-radius: 14px;
+	overflow: hidden;
+	background: #fff;
+}
+
+.bn-shot a {
+	display: block;
+	background: #fff8fb;
+}
+
+.bn-shot img {
+	display: block;
+	width: 100%;
+	height: auto;
+	max-width: 20rem;
+	margin-inline: auto;
+}
+
+.bn-shot figcaption {
+	margin: 0;
+	padding: 0.7rem 0.85rem 0.9rem;
+	font-size: 0.95rem;
+	line-height: 1.55;
+	color: var(--sl-color-gray-2);
+	background: var(--sl-color-bg);
+}
+
+.bn-shot figcaption::after {
+	content: ' · แตะรูปเพื่อขยาย';
+	opacity: 0.65;
+}
+
+@media (min-width: 50rem) {
+	.bn-step-shot {
+		grid-template-columns: minmax(0, 1fr) minmax(12rem, 18rem);
+	}
+}
+
+:root[data-theme='dark'] .bn-shot {
+	border-color: #5a2740;
+}
+
+:root[data-theme='dark'] .bn-shot a {
+	background: #2a1520;
+}

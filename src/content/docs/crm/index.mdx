@@ -4,6 +4,9 @@ description: คู่มือแคชเชียร์ระบบสะส�
 ---
 
 import { Aside, Steps, Card, CardGrid } from '@astrojs/starlight/components';
+import loyaltyCard from '../../../assets/crm/screen-loyalty-card.png';
+import modalCode from '../../../assets/crm/screen-modal-code.png';
+import redeemModal from '../../../assets/crm/screen-redeem.png';
 
 <span class="bn-kicker">อัปเดต 20 ก.ย. 2026</span>
 
@@ -84,6 +87,10 @@ import { Aside, Steps, Card, CardGrid } from '@astrojs/starlight/components';
 
 ### 4 สเต็ปกดแลกใน POS
 
+<div class="bn-step-shot">
+
+<div>
+
 <Steps>
 
 1. **ใส่เบอร์โทร** — พิมพ์เบอร์บนบิล ระบบโชว์การ์ดสะสมแต้มทันที
@@ -96,6 +103,35 @@ import { Aside, Steps, Card, CardGrid } from '@astrojs/starlight/components';
    อย่าเลือก Credit / แพ็กเกจ แทนการแลกแต้ม
 
 </Steps>
+
+</div>
+
+<div class="bn-shot-stack">
+	<figure class="bn-shot">
+		<a href={loyaltyCard.src} target="_blank" rel="noopener noreferrer">
+			<img
+				src={loyaltyCard.src}
+				width={loyaltyCard.width}
+				height={loyaltyCard.height}
+				alt="จอ POS หลังใส่เบอร์ โชว์การ์ดสะสมแต้มโทนชมพู แต้มคงเหลือ และปุ่มแลกรางวัล"
+			/>
+		</a>
+		<figcaption>สเต็ป 1–2: การ์ดชมพูหลังใส่เบอร์ — แต้มคงเหลือ + แลกวันนี้ + ปุ่มแลกรางวัล</figcaption>
+	</figure>
+	<figure class="bn-shot">
+		<a href={redeemModal.src} target="_blank" rel="noopener noreferrer">
+			<img
+				src={redeemModal.src}
+				width={redeemModal.width}
+				height={redeemModal.height}
+				alt="หน้าต่างแลกรางวัลด้วยแต้ม เลือกตัดหนังมือหรือเท้า แล้วกดใส่บริการฟรีในบิล"
+			/>
+		</a>
+		<figcaption>สเต็ป 3–4: เลือกของรางวัล แล้วกดใส่บริการฟรีในบิล</figcaption>
+	</figure>
+</div>
+
+</div>
 
 ### ตารางบริการที่แลกได้
 
@@ -127,9 +163,13 @@ import { Aside, Steps, Card, CardGrid } from '@astrojs/starlight/components';
 - ขึ้น **LINE ✓** = ผูกแล้ว ไม่ต้องทำอะไรเพิ่ม
 - ยังไม่ขึ้น LINE ✓ = กด **สร้างรหัส** ตาม 3 สเต็ปด้านล่าง เบอร์ใหม่ที่ยังไม่มีประวัติก็กดได้ ไม่ต้องเปิด MyCustomer
 
+<div class="bn-step-shot">
+
+<div>
+
 <Steps>
 
-1. **กดปุ่ม [สร้างรหัส]** บนจอคิดเงิน แถวเบอร์โทร / สถานะ LINE
+1. **กดปุ่ม [สร้างรหัส]** บนจอคิดเงิน แถวเบอร์โทร / สถานะ LINE (ปุ่มดำบนการ์ดชมพูด้านบน)
 
 2. **บอกรหัส 6 หลักกับลูกค้า** — ตัวเลขใหญ่ชัด กดคัดลอกได้ ใช้ได้ประมาณ 8 นาที
 
@@ -137,13 +177,28 @@ import { Aside, Steps, Card, CardGrid } from '@astrojs/starlight/components';
 
 </Steps>
 
+</div>
+
+<figure class="bn-shot">
+	<a href={modalCode.src} target="_blank" rel="noopener noreferrer">
+		<img
+			src={modalCode.src}
+			width={modalCode.width}
+			height={modalCode.height}
+			alt="หน้าต่างรหัสผูกบัญชี LINE โชว์รหัส 6 หลัก ปุ่มคัดลอกรหัส และปุ่มลูกค้ากรอกแล้ว"
+		/>
+	</a>
+	<figcaption>สเต็ป 2: รหัส 6 หลัก — อ่านให้ลูกค้าหรือกดคัดลอก ใช้ได้ประมาณ 8 นาที</figcaption>
+</figure>
+
+</div>
+
 ตัวอย่างคำพูด:  
 «คุณพี่คะ รบกวนเปิด LINE ร้าน BillioNail กดเมนูเช็กแต้ม แล้วใส่รหัส 6 ตัวนี้ได้เลยนะคะ จะได้ดูแต้มและรับใบเสร็จในไลน์ได้สะดวกค่ะ»
 
-<Aside type="note" title="รูปหน้าจอ — ใส่ทีหลังได้">
-ยังไม่มีไฟล์ภาพในรีโปนี้ ตอนใช้จริงดูที่จอ POS ตามสเต็ปด้านบน  
-ถ้าจะแปะรูปทีหลัง วางไฟล์ใน `src/assets/` แล้วใส่ `![คำอธิบาย](../../assets/ชื่อไฟล์.png)`  
-รูปที่ยังขาด: หน้า LINE ที่ลูกค้ากรอกรหัส และบิลหลังใส่บริการฟรี ฿0
+<Aside type="note" title="รูปหน้าจอที่ยังไม่มี">
+แคปจอ POS สามใบด้านบนตรงกับจอคิดเงินปัจจุบันแล้ว (การ์ดชมพู, รหัส LINE, หน้าต่างแลกรางวัล)  
+ยังขาด: หน้า LINE ที่ลูกค้ากรอกรหัส และบิลหลังใส่บริการฟรี ฿0
 </Aside>
 
 ## ข้อห้ามเด็ดขาด & ส่งต่อแอดมิน

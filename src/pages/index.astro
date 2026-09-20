@@ -1,0 +1,89 @@
+---
+import GuideLayout from '../layouts/GuideLayout.astro';
+---
+
+<GuideLayout
+	title="คู่มือแคชเชียร์ BillioNail"
+	description="ศูนย์รวมคู่มือคิดเงินสำหรับแคชเชียร์ — สะสมแต้มและเครดิตสมาชิก"
+	heading="คู่มือแคชเชียร์ — เลือกหมวด"
+	current="home"
+>
+	<section class="hero hub-hero">
+		<span class="hero__badge">✨ อ่านบนมือถือได้เร็ว ไม่มีศัพท์โค้ด</span>
+		<h2>ศูนย์รวมคู่มือคิดเงิน BillioNail</h2>
+		<p>
+			จำสั้นๆ ก่อนลงมือ: <strong>แลกแต้ม ≠ ใช้ Credit / แพ็กเกจ</strong> อยากให้บริการฟรีด้วยแต้ม ให้กด
+			<strong>แลกรางวัล</strong> อยากใช้เงินในกระเป๋าเครดิต ให้เลือก <strong>Credit / แพ็กเกจ</strong>
+		</p>
+		<span class="hero__mark" aria-hidden="true">💎</span>
+	</section>
+
+	<section class="grid grid-2">
+		<a class="card card-link" href="/crm/">
+			<div>
+				<div class="icon-box">1</div>
+				<h3>สะสมแต้ม (CRM)</h3>
+				<p>
+					ใส่เบอร์ให้ถูก ปิดบิลแล้วได้แต้ม แลกได้ที่เคาน์เตอร์เท่านั้น มีรูปจอ POS จริง — การ์ดชมพู
+					รหัส LINE และหน้าต่างแลกรางวัล
+				</p>
+			</div>
+			<div class="card-foot">เปิดคู่มือสะสมแต้ม →</div>
+		</a>
+		<a class="card card-link amber" href="/credit/">
+			<div>
+				<div class="icon-box amber">2</div>
+				<h3>เครดิตสมาชิก</h3>
+				<p>
+					กระเป๋าเงินบาทตามเบอร์โทร ใช้ร่วม 3 สาขา โปรร้านก่อน แล้วบวก 5% ถ้าใช้เครดิตแม้แต่บาทเดียว
+				</p>
+			</div>
+			<div class="card-foot amber">เปิดคู่มือเครดิต →</div>
+		</a>
+	</section>
+
+	<section class="section">
+		<div class="section-head">
+			<span class="num">📌</span>
+			<div>
+				<h2>อ่านอะไรก่อน</h2>
+				<p>สามข้อนี้จำไว้ แล้วค่อยเปิดหมวดที่ตรงงาน</p>
+			</div>
+		</div>
+		<ol class="steps">
+			<li>
+				<strong>คิดเงินบริการตามปกติ</strong> — เปิด <a href="/crm/">สะสมแต้ม</a> จำสูตร 400 บาท = 1 แต้ม
+				และปุ่ม <strong>แลกรางวัล</strong>
+			</li>
+			<li>
+				<strong>ลูกค้าใช้กระเป๋าเงินเครดิต</strong> — เปิด <a href="/credit/">เครดิตสมาชิก</a> จำโปรร้านก่อน
+				แล้วบวก 5% ถ้าใช้เครดิตแม้แต่บาทเดียว
+			</li>
+			<li><strong>อย่าสลับสองปุ่มนี้</strong> — แลกแต้ม ≠ ใช้ Credit / แพ็กเกจ</li>
+		</ol>
+	</section>
+
+	<section class="section">
+		<div class="section-head">
+			<span class="num indigo">+</span>
+			<div>
+				<h2>หมวดที่จะเพิ่ม</h2>
+				<p>ยังไม่มีหน้าเต็ม — จะใส่เมื่อมี SOP ล็อกแล้ว</p>
+			</div>
+		</div>
+		<div class="grid grid-3">
+			<div class="card soft-slate">
+				<h3>จุดขาย</h3>
+				<p>จะอยู่ที่ <code>/pos/</code> — เปิดกะ คิดเงินทั่วไป จอ POS</p>
+			</div>
+			<div class="card soft-slate">
+				<h3>รายงาน</h3>
+				<p>จะอยู่ที่ <code>/reports/</code> — ปิดร้าน ยอดวัน ยอดเครดิต</p>
+			</div>
+			<div class="card soft-slate">
+				<h3>ลงเวลา</h3>
+				<p>จะอยู่ที่ <code>/timeclock/</code> — เข้างาน ออกงาน</p>
+			</div>
+		</div>
+	</section>
+</GuideLayout>

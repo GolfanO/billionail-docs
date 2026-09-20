@@ -2,7 +2,7 @@
 
 คู่มือแคชเชียร์แบบสแตติกสำหรับ **https://docs.billionail.com/**
 
-เขียนภาษาไทยก่อน อ่านบนมือถือได้ หมวดแยกชัด เติมหมวดใหม่ได้เรื่อยๆ
+เขียนภาษาไทยก่อน อ่านบนมือถือได้ โทนชมพูร้านแบบ [billionail.com/crm](https://billionail.com/crm/) หมวดแยกชัด เติมหมวดใหม่ได้เรื่อยๆ
 
 | หน้าที่แคชเชียร์เปิด | URL |
 | --- | --- |
@@ -37,30 +37,29 @@ pnpm build
 
 ไม่ต้องแตะ DNS แค่เพิ่มหน้าแล้วบิลด์ใหม่
 
-1. สร้างโฟลเดอร์ใต้ `src/content/docs/` ชื่อสั้นภาษาอังกฤษ เช่น `pos`, `reports`, `timeclock`
-2. ใส่ `index.mdx` ในโฟลเดอร์นั้น อย่างน้อยมี `title` กับ `description`
+1. สร้างโฟลเดอร์ใต้ `src/pages/` ชื่อสั้นภาษาอังกฤษ เช่น `pos`, `reports`, `timeclock`
+2. ใส่ `index.astro` ในโฟลเดอร์นั้น ใช้ `GuideLayout` จาก `src/layouts/GuideLayout.astro`
 
-```mdx
+```astro
 ---
-title: จุดขาย
-description: คู่มือแคชเชียร์จอคิดเงิน
+import GuideLayout from '../../layouts/GuideLayout.astro';
 ---
 
-เขียนขั้นตอนภาษาไทยสั้นๆ ที่นี่
+<GuideLayout
+	title="จุดขาย"
+	description="คู่มือแคชเชียร์จอคิดเงิน"
+	heading="คู่มือแคชเชียร์ — จุดขาย"
+	current="home"
+>
+	<section class="hero">
+		<h2>จุดขาย</h2>
+		<p>เขียนขั้นตอนภาษาไทยสั้นๆ ที่นี่</p>
+	</section>
+</GuideLayout>
 ```
 
-3. เปิด `astro.config.mjs` แล้วเพิ่มกลุ่มใน `sidebar` — นี่คือเมนูด้านข้างที่แคชเชียร์เห็น
-
-```js
-{
-  label: 'จุดขาย',
-  items: [{ label: 'คู่มือจุดขาย', slug: 'pos' }],
-}
-```
-
-`slug: 'pos'` จะได้ URL `/pos/` เพราะตั้ง `trailingSlash: 'always'` ไว้แล้ว
-
-4. ใส่การ์ดหรือลิงก์ใน `src/content/docs/index.mdx` หมวดคู่มือตอนนี้ และย้ายชื่อออกจากตารางหมวดที่จะเพิ่ม
+3. เปิด `src/layouts/GuideLayout.astro` แล้วเพิ่มลิงก์ในแถบหมวดด้านบน (`hub`)
+4. ใส่การ์ดหรือลิงก์ใน `src/pages/index.astro` หมวดคู่มือตอนนี้ และย้ายชื่อออกจากหมวดที่จะเพิ่ม
 5. รัน `pnpm build` ให้ผ่าน แล้วเปิดพรีวิวเช็กมือถือ
 
 หมวดที่ยังไม่มีหน้า: จุดขาย (`/pos/`), รายงาน (`/reports/`), ลงเวลา (`/timeclock/`)
@@ -99,11 +98,11 @@ GitHub App / Vercel ลิงก์รีโปนี้ไม่ได้ — �
 
 ## สแต็ก
 
-- [Astro Starlight](https://starlight.astro.build/) — แถบหมวด + ค้นหา Pagefind
-- `output: 'static'` ใน `astro.config.mjs` — ไม่ต้องมีเซิร์ฟเวอร์ เดพลอยด้วย GitHub Pages
-- ภาษาหลักคือไทย (`locales.root.lang = 'th'`) ไม่มี prefix `/th/`
+- Astro เพจสแตติก (`output: 'static'`) — ไม่มีเซิร์ฟเวอร์ เดพลอยด้วย GitHub Pages
+- เลย์เอาต์โทนชมพูร้านตาม [billionail.com/crm](https://billionail.com/crm/) (ฟอนต์ Prompt + Noto Sans Thai, การ์ดอุ่น, แถบหมวดด้านบน)
+- ภาษาหลักคือไทย (`lang="th"`) ไม่มี prefix `/th/`
 
 ## รูปหน้าจอ
 
-ถ้ายังไม่มีแคปจอ POS อย่าใส่ไฟล์ปลอม ใช้ลำดับขั้นตอนไปก่อน  
-มีรูปแล้ววางใน `src/assets/` แล้วอ้างใน `.mdx`
+แคปจอ POS ของสะสมแต้มอยู่ที่ `public/images/crm/`  
+หน้า `/crm/` โชว์การ์ดชมพู หน้าต่างแลกรางวัล และรหัส LINE 6 หลัก แล้ว

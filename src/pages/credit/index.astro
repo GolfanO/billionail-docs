@@ -1,0 +1,254 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const tabs = [
+	{ href: '#overview', label: 'ภาพรวม' },
+	{ href: '#buy', label: '1. ซื้อเครดิต' },
+	{ href: '#use', label: '2. ใช้เครดิต' },
+	{ href: '#examples', label: '3. ตัวอย่าง' },
+	{ href: '#dont', label: '4. ห้ามทำ' },
+	{ href: '#admin', label: '5. แอดมิน' },
+];
+---
+
+<GuideLayout
+	title="คู่มือแคชเชียร์ BillioNail — เครดิตสมาชิก"
+	description="คู่มือแคชเชียร์ Member Credit — กระเป๋าเงินบาทตามเบอร์โทร ใช้ร่วม 3 สาขา กฎล็อก ก.ย. 2026"
+	heading="คู่มือแคชเชียร์ — เครดิตสมาชิก"
+	current="credit"
+	tabs={tabs}
+>
+	<section class="hero gold">
+		<span class="hero__badge">กฎล็อก ก.ย. 2026</span>
+		<h2>เครดิตสมาชิก BillioNail</h2>
+		<p>
+			กระเป๋าเงินเป็นบาท ผูกกับเบอร์โทร ใช้ร่วมได้ทั้ง 3 สาขา <strong>ไม่ใช่แต้มสะสม</strong> และ
+			<strong>ไม่ใช่ปุ่มแลกรางวัล</strong>
+		</p>
+		<span class="hero__mark" aria-hidden="true">💳</span>
+	</section>
+
+	<section id="overview" class="compare">
+		<h3>⚠️ อย่าสับสนกับแลกรางวัล</h3>
+		<div class="split">
+			<div class="pink">
+				<div class="label">แลกแต้ม</div>
+				<p>
+					อยากตัดแต้มให้บริการฟรี → ไปที่ <a href="/crm/">สะสมแต้ม</a> แล้วกด <strong>แลกรางวัล</strong>
+				</p>
+			</div>
+			<div>
+				<div class="label">Credit · แพ็กเกจ</div>
+				<p>อยากใช้เงินในกระเป๋าเครดิต → เลือก <strong>Credit / แพ็กเกจ</strong> ตามคู่มือนี้</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="grid grid-3">
+		<div class="card">
+			<div>
+				<div class="icon-box">1</div>
+				<h3>กระเป๋าตามเบอร์</h3>
+				<p>ยอดเครดิตเป็นบาท ใช้ร่วม 3 สาขา ใส่เบอร์ให้ถูกเหมือนสะสมแต้ม</p>
+			</div>
+			<div class="card-foot">📱 เบอร์ตรง = กระเป๋าถูกใบ</div>
+		</div>
+		<div class="card amber">
+			<div>
+				<div class="icon-box amber">2</div>
+				<h3>ซื้อเครดิต ≠ ใช้เครดิต</h3>
+				<p>ซื้อ = รับเงินสด/QR แล้วเติมกระเป๋า<br />ใช้ = เลือก Credit / แพ็กเกจ แล้วเผากระเป๋า</p>
+			</div>
+			<div class="card-foot amber">แยกสองปุ่มนี้ให้ขาด</div>
+		</div>
+		<div class="card emerald">
+			<div>
+				<div class="icon-box emerald">3</div>
+				<h3>ยอด ฿0 ไม่โชว์กล่อง</h3>
+				<p>ถ้ากระเป๋าเป็นศูนย์ POS จะซ่อนกล่องยอดเครดิต ไม่ต้องหา</p>
+			</div>
+			<div class="card-foot emerald">ว่าง = ไม่มีกล่อง</div>
+		</div>
+	</section>
+
+	<section class="compare">
+		<h3>สองปุ่มที่ต้องแยกให้ขาด</h3>
+		<div class="split">
+			<div class="pink">
+				<div class="label">ซื้อเครดิต (สินค้าเติมเงิน)</div>
+				<p>
+					ลูกค้าซื้อเงินใส่กระเป๋า · <strong>ไม่เลือกพนักงาน</strong> ไม่มีค่าคอม ·
+					<strong>ไม่ได้แต้ม</strong> · เงินที่รับวันนี้ = รายได้ · ไม่บวก 5%
+				</p>
+			</div>
+			<div>
+				<div class="label">ใช้ Credit / แพ็กเกจ</div>
+				<p>
+					เอาเงินในกระเป๋ามาจ่ายบริการ · เลือกพนักงานตามปกติ · ได้แต้มจากยอดสุทธิบริการ ·
+					การเผากระเป๋า<strong>ไม่ใช่</strong>ยอดเงินสดของวัน · บวก 5% ถ้าใช้เครดิตแม้แต่บาทเดียว
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="buy" class="section">
+		<div class="section-head">
+			<span class="num">1</span>
+			<div>
+				<h2>ซื้อเครดิต (เติมกระเป๋า)</h2>
+				<p>ใช้เมื่อลูกค้าอยากใส่เงินเข้ากระเป๋าล่วงหน้า</p>
+			</div>
+		</div>
+		<div class="grid grid-2">
+			<div class="panel">
+				<h4>📱 ลำดับซื้อเครดิต</h4>
+				<ol class="steps">
+					<li>ใส่เบอร์โทรลูกค้าให้ถูกต้อง (กระเป๋าอยู่ที่เบอร์นี้ ใช้ได้ทั้ง 3 สาขา)</li>
+					<li>เลือกสินค้า <strong>ซื้อเครดิต</strong> ตามยอดที่ลูกค้าจ่าย</li>
+					<li><strong>อย่าเลือกพนักงาน</strong> — สินค้านี้ไม่มีคนทำ ไม่มีค่าคอม</li>
+					<li>รับเงินสดหรือ QR ตามยอดซื้อ แล้วปิดบิล</li>
+				</ol>
+			</div>
+			<div class="panel emerald">
+				<h4>💬 บิลนี้คืออะไร</h4>
+				<p>
+					บิลนี้คือรายได้ของร้าน + ยอดเข้ากระเป๋าลูกค้า<br />
+					บิลนี้ <strong>ไม่ได้แต้มสะสม</strong>
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="use" class="section">
+		<div class="section-head">
+			<span class="num amber">2</span>
+			<div>
+				<h2>ใช้เครดิตจ่ายบิลบริการ</h2>
+				<p>จอชำระเงินเขียนว่า Credit / แพ็กเกจ (จอเก่าอาจยังเขียน Member)</p>
+			</div>
+		</div>
+		<div class="panel amber">
+			<h4>🛠️ ลำดับคิดเงิน — ทำตามนี้ทุกครั้ง</h4>
+			<ol class="steps">
+				<li><strong>ใส่โปรร้านก่อน</strong> — ส่วนลดร้าน โปรชิ้น โปรบิล ทำก่อนเสมอ</li>
+				<li>
+					<strong>ดูว่าจะใช้เครดิตไหม</strong> — ถ้าใช้เครดิตแม้แต่บาทเดียว (รวมบิลที่เครดิตไม่พอแล้วเก็บส่วนต่างเป็นเงินสด)
+					ให้ <strong>บวก 5%</strong>
+				</li>
+				<li><strong>เผายอดจากกระเป๋า</strong> — ระบบตัดเงินในกระเป๋าตามยอดหลังโปร + 5%</li>
+				<li><strong>ถ้าเครดิตไม่พอ</strong> — เผาที่เหลือในกระเป๋า แล้วเก็บส่วนต่างเป็นเงินสดหรือ QR</li>
+			</ol>
+		</div>
+		<div class="panel emerald" style="margin-top: 0.85rem">
+			<h4>เงินสด/QR อย่างเดียว = ไม่บวก 5%</h4>
+			<p>
+				ลูกค้ามีเครดิตเหลือ แต่เลือกจ่ายเงินสดหรือ QR ทั้งบิล และไม่แตะกระเป๋า →
+				<strong>ไม่บวก 5%</strong> กระเป๋าไม่ขยับ
+			</p>
+		</div>
+		<div class="panel slate" style="margin-top: 0.85rem">
+			<h4>ค่าคอมและแต้มตอนใช้เครดิต</h4>
+			<ul class="clean">
+				<li>พนักงานได้ค่าคอมตาม <strong>ราคาเต็มของบริการ</strong> (ราคาลิสต์ ไม่ถูกลดเพราะใช้เครดิต)</li>
+				<li>
+					แต้มสะสมคิดจาก <strong>ยอดสุทธิของบริการ</strong> ตามสูตรปกติ หลังโปรร้าน — ดู
+					<a href="/crm/">สะสมแต้ม</a>
+				</li>
+				<li>
+					การเผากระเป๋าไม่นับเป็นยอดเงินสดของวัน ยอดวันที่นับคือเงินที่รับจริงตอน
+					<strong>ซื้อเครดิต</strong>
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<section id="examples" class="section">
+		<div class="section-head">
+			<span class="num indigo">3</span>
+			<div>
+				<h2>ตัวอย่างสั้นๆ</h2>
+				<p>กดจำภาพ รวมบิลแยกจ่าย และ void</p>
+			</div>
+		</div>
+		<div class="grid grid-2">
+			<div class="example">
+				<b>ตัวอย่าง 1 — ซื้อเครดิต</b>
+				<p>ลูกค้าโอน ฿2,000 ซื้อเครดิต รับเงิน ฿2,000 = รายได้วันนี้ กระเป๋าเพิ่ม ฿2,000 ไม่เลือกพนักงาน ไม่ได้แต้ม</p>
+			</div>
+			<div class="example">
+				<b>ตัวอย่าง 2 — ใช้เครดิตทั้งบิล</b>
+				<p>
+					บริการราคาเต็ม ฿1,000 มีโปรร้าน 10% → เหลือ ฿900 จ่ายด้วยเครดิต → บวก 5% → ยอดเผา ฿945
+					พนักงานได้คอมจากราคาเต็ม ฿1,000
+				</p>
+			</div>
+			<div class="example">
+				<b>ตัวอย่าง 3 — เครดิตไม่พอ แยกจ่าย</b>
+				<p>ยอดหลังโปร + 5% = ฿945 กระเป๋ามี ฿400 เผา ฿400 เก็บส่วนต่าง ฿545 เป็นเงินสด/QR ยังบวก 5%</p>
+			</div>
+			<div class="example">
+				<b>ตัวอย่าง 4 — มีเครดิตแต่จ่ายเงินสดทั้งบิล</b>
+				<p>กระเป๋ามีเงิน แต่ลูกค้าจ่าย QR ทั้งบิล ไม่ใช้ Credit / แพ็กเกจ ไม่บวก 5% กระเป๋าไม่ลด</p>
+			</div>
+			<div class="example">
+				<b>ตัวอย่าง 5 — ยกเลิกบิลที่เผาเครดิต</b>
+				<p>void บิลที่เผากระเป๋าแล้ว → เงินกลับเข้ากระเป๋าตามเดิม</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="dont" class="section">
+		<div class="section-head">
+			<span class="num rose">4</span>
+			<div>
+				<h2>ห้ามทำ</h2>
+				<p>เรื่องที่แคชเชียร์ไม่ควรทำเอง</p>
+			</div>
+		</div>
+		<div class="alert">
+			<h4>🛑 กฎเหล็กเครดิต</h4>
+			<div class="grid grid-3">
+				<div class="card soft-red">
+					<h3>อย่าสลับกับแลกรางวัล</h3>
+					<p>ห้ามใช้ Credit / แพ็กเกจ แทนปุ่มแลกรางวัล — คนละระบบ</p>
+				</div>
+				<div class="card soft-red">
+					<h3>ห้ามลืมบวก 5%</h3>
+					<p>ใช้เครดิตแม้แยกจ่าย ต้องบวก 5% — แต่ห้ามบวกถ้าจ่ายเงินสด/QR ทั้งบิล</p>
+				</div>
+				<div class="card soft-red">
+					<h3>ห้ามนับยอดเผาเป็นเงินสด</h3>
+					<p>ยอดลิ้นชักของวันคือเงินที่รับตอนซื้อเครดิต ไม่ใช่ตอนเผากระเป๋า</p>
+				</div>
+			</div>
+			<ul class="clean" style="margin-top: 0.8rem">
+				<li>ห้ามเลือกพนักงานบนสินค้าซื้อเครดิต และห้ามสัญญาว่าบิลเติมเงินได้แต้ม</li>
+				<li>ห้ามแก้ยอดยกมาเอง — แคชเชียร์ไม่ปรับยอดเปิดบัญชี</li>
+				<li>ห้ามสัญญาว่าเครดิตสาขานี้ใช้สาขาอื่นไม่ได้ — ใช้ร่วม 3 สาขาตามเบอร์</li>
+			</ul>
+		</div>
+	</section>
+
+	<section id="admin" class="section">
+		<div class="section-head">
+			<span class="num">5</span>
+			<div>
+				<h2>สำหรับหัวหน้า / แอดมิน</h2>
+				<p>แคชเชียร์ไม่ปรับยอดตั้งต้น</p>
+			</div>
+		</div>
+		<div class="dark-callout">
+			<h4>🚨 ยอดยกมาอยู่ที่ไหน</h4>
+			<p>
+				ยอดยกมาใส่ที่ <strong>CRM แต้ม → แท็บเครดิต (ยอดยกมา)</strong> เท่านั้น ถ้าบิลเผาเครดิตผิด ให้
+				void เพื่อคืนกระเป๋า อย่าให้แคชเชียร์เดายอดแล้วเติมมือ
+			</p>
+		</div>
+		<div class="missing" style="margin-top: 1rem">
+			<h3 style="margin: 0 0 0.35rem">📷 รูปหน้าจอ — ใส่ทีหลังได้</h3>
+			<p class="lede">
+				ยังไม่มีแคปจอ POS ของเครดิตในรีโปนี้ ใช้ลำดับขั้นตอนด้านบนกับจอจริงก่อน
+			</p>
+		</div>
+	</section>
+</GuideLayout>

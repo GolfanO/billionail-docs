@@ -1,0 +1,153 @@
+---
+import '../styles/guide.css';
+
+interface Tab {
+	href: string;
+	label: string;
+	accent?: 'rose' | 'amber';
+}
+
+interface Props {
+	title: string;
+	description: string;
+	heading: string;
+	updated?: string;
+	current: 'home' | 'crm' | 'credit';
+	tabs?: Tab[];
+}
+
+const {
+	title,
+	description,
+	heading,
+	updated = 'อัปเดต 20 ก.ย. 2026',
+	current,
+	tabs = [],
+} = Astro.props;
+
+const hub = [
+	{ href: '/', id: 'home', label: 'หน้าแรก' },
+	{ href: '/crm/', id: 'crm', label: 'สะสมแต้ม' },
+	{ href: '/credit/', id: 'credit', label: 'เครดิตสมาชิก' },
+] as const;
+---
+
+<!doctype html>
+<html lang="th">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="theme-color" content="#e11d48" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="wrap">
+				<div class="site-header__row">
+					<a class="brand" href="/">
+						<span class="brand__mark" aria-hidden="true">💎</span>
+						<span>
+							<span class="brand__kicker">
+								<span class="pill">BillioNail</span>
+								<span class="muted">{updated}</span>
+							</span>
+							<h1>{heading}</h1>
+						</span>
+					</a>
+					<div class="header-actions">
+						<span class="live-dot"><i></i> ระบบพร้อมใช้งาน</span>
+						<button class="btn" type="button" onclick="window.print()">🖨️ พิมพ์</button>
+					</div>
+				</div>
+				<nav class="hub" aria-label="หมวดคู่มือ">
+					{
+						hub.map((item) => (
+							<a href={item.href} class={item.id === current ? 'is-active' : undefined}>
+								{item.label}
+							</a>
+						))
+					}
+				</nav>
+				{
+					tabs.length > 0 && (
+						<nav class="tabs" aria-label="หัวข้อในหน้า">
+							{tabs.map((tab) => (
+								<a href={tab.href} class={tab.accent === 'amber' ? 'amber' : 'accent'}>
+									{tab.label}
+								</a>
+							))}
+						</nav>
+					)
+				}
+			</div>
+		</header>
+
+		<main class="page wrap">
+			<slot />
+		</main>
+
+		<footer class="site-footer">
+			<p>คู่มือแคชเชียร์ BillioNail — สำหรับพนักงานแคชเชียร์และฝ่ายต้อนรับหน้าร้าน</p>
+			<p>docs.billionail.com · ระบบ CRM & POS อัปเดตล่าสุด: 20 กันยายน 2026</p>
+		</footer>
+
+		<div id="lightbox" class="lightbox">
+			<div class="lightbox__box" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+				<div class="lightbox__bar">
+					<h4 id="lightbox-title"></h4>
+					<button class="btn" type="button" data-close-lightbox>×</button>
+				</div>
+				<div class="lightbox__stage">
+					<img id="lightbox-img" alt="" />
+				</div>
+				<div class="lightbox__foot">
+					<button class="btn" type="button" data-close-lightbox>ปิดหน้าต่าง</button>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			const modal = document.getElementById('lightbox');
+			const img = document.getElementById('lightbox-img');
+			const title = document.getElementById('lightbox-title');
+
+			function openLightbox(src: string, caption: string) {
+				if (!modal || !img || !title) return;
+				img.setAttribute('src', src);
+				img.setAttribute('alt', caption);
+				title.textContent = caption;
+				modal.classList.add('is-open');
+			}
+
+			function closeLightbox() {
+				if (!modal || !img) return;
+				modal.classList.remove('is-open');
+				img.setAttribute('src', '');
+			}
+
+			document.querySelectorAll<HTMLButtonElement>('[data-lightbox]').forEach((btn) => {
+				btn.addEventListener('click', () => {
+					openLightbox(btn.dataset.src || '', btn.dataset.title || '');
+				});
+			});
+
+			modal?.addEventListener('click', (event) => {
+				if (event.target === modal) closeLightbox();
+			});
+			document.querySelectorAll('[data-close-lightbox]').forEach((btn) => {
+				btn.addEventListener('click', closeLightbox);
+			});
+			document.addEventListener('keydown', (event) => {
+				if (event.key === 'Escape') closeLightbox();
+			});
+		</script>
+	</body>
+</html>

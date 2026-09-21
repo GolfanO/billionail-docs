@@ -1,0 +1,629 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const tabs = [
+	{ href: '#rules-summary', label: '📌 สรุปกฎ 3 ข้อ' },
+	{ href: '#earn-points', label: '1. ได้แต้มยังไง' },
+	{ href: '#redeem-points', label: '2. วิธีแลกแต้ม' },
+	{ href: '#link-line', label: '3. วิธีผูก LINE' },
+	{ href: '#prohibitions', label: '4. ข้อห้ามสำคัญ' },
+	{ href: '#faq', label: '5. ถามบ่อย (FAQ)' },
+	{ href: '#calculator', label: '🧮 เครื่องคิดแต้ม', accent: 'amber' as const },
+];
+---
+
+<GuideLayout
+	title="คู่มือแคชเชียร์ BillioNail — ระบบสะสมแต้ม"
+	description="คู่มือแคชเชียร์ระบบสะสมแต้ม BillioNail — ใส่เบอร์ ปิดบิล แลกรางวัลที่เคาน์เตอร์"
+	heading="คู่มือแคชเชียร์ — ระบบสะสมแต้ม"
+	current="crm"
+	tabs={tabs}
+>
+	<section class="hero">
+		<span class="hero__badge">✨ อ่านจบใน 3 นาที เข้าใจพร้อมคิดเงินทันที</span>
+		<h2>ระบบสะสมแต้ม BillioNail</h2>
+		<p>
+			จำง่ายๆ แค่ <strong>"เบอร์โทรตรง = แต้มเข้าชัวร์"</strong> ลูกค้าได้แต้มอัตโนมัติ
+			ส่วนการแลกของรางวัล <strong>ลูกค้าแลกเองในมือถือไม่ได้ ต้องมาทำที่เคาน์เตอร์กับแคชเชียร์เท่านั้นค่ะ!</strong>
+		</p>
+		<span class="hero__mark" aria-hidden="true">💎</span>
+	</section>
+
+	<section id="rules-summary" class="grid grid-3">
+		<div class="card">
+			<div>
+				<div class="icon-box">1</div>
+				<h3>ใส่เบอร์ให้ถูก = แต้มเข้าเลย</h3>
+				<p>แต้มทั้งหมดผูกติดกับ <strong>"เบอร์โทร"</strong> คิดเงินเสร็จระบบคำนวณแต้มให้ทันที ไม่ต้องกดอะไรเพิ่ม</p>
+			</div>
+			<div class="card-foot">🎯 400 บาท = 1 แต้ม (ปัดเศษทิ้ง)</div>
+		</div>
+		<div class="card amber">
+			<div>
+				<div class="icon-box amber">2</div>
+				<h3>แลกแต้มที่เคาน์เตอร์เท่านั้น</h3>
+				<p>
+					ลูกค้าเปิดดูแต้มใน LINE ได้ <strong>แต่กดแลกเองไม่ได้</strong> ต้องบอกเบอร์ให้แคชเชียร์กดปุ่ม
+					<strong>แลกรางวัล</strong> ใน POS ให้เท่านั้น
+				</p>
+			</div>
+			<div class="card-foot amber">🎁 แลกได้สูงสุดวันละ 2 ครั้ง / เบอร์ · ครั้งละ 1 รายการ</div>
+		</div>
+		<div class="card emerald">
+			<div>
+				<div class="icon-box emerald">3</div>
+				<h3>เบอร์ผิดห้ามสมัครซ้ำ</h3>
+				<p>
+					ถ้าพิมพ์เบอร์ผิด หรือลูกค้าเปลี่ยนเบอร์ <strong>อย่ากดสร้างลูกค้าใหม่</strong> ให้ส่งแจ้งแอดมินแก้ในระบบ CRM
+				</p>
+			</div>
+			<div class="card-foot emerald">⚠️ เลิกใช้ MyCustomer แล้ว ใช้ POS ตัวเดียว</div>
+		</div>
+	</section>
+
+	<section class="compare">
+		<h3>⚠️ อย่าสับสนสองอย่างนี้ตอนคิดเงิน</h3>
+		<div class="split">
+			<div class="pink">
+				<div class="label">แลกแต้ม</div>
+				<p>
+					<strong>แลกแต้ม = ปุ่มแลกรางวัลเท่านั้น</strong><br />
+					กดปุ่ม <strong>แลกรางวัล</strong> บนการ์ดสะสมแต้ม แล้วเลือกของรางวัล ระบบจะตัดแต้มให้บริการฟรี (฿0)
+				</p>
+			</div>
+			<div>
+				<div class="label">Credit · แพ็กเกจ</div>
+				<p>
+					<strong>Credit / แพ็กเกจ = ใช้แพ็กเกจล่วงหน้า ไม่หักแต้ม</strong><br />
+					คือวิธีชำระด้วยเครดิตหรือแพ็กเกจที่ลูกค้าซื้อไว้ (จอชำระเงินอาจเคยเขียนว่า <em>Member</em>) —
+					<strong>ไม่ใช่การแลกแต้ม</strong> ค่ะ
+				</p>
+			</div>
+		</div>
+		<p class="note">
+			จำสั้นๆ: อยากตัดแต้มให้ลูกค้าใช้บริการฟรี → กด <strong>แลกรางวัล</strong> เท่านั้น อย่าเลือก Credit /
+			แพ็กเกจ / Member แทน · วิธีใช้เครดิตอ่านที่ <a href="/credit/">คู่มือเครดิตสมาชิก</a>
+		</p>
+	</section>
+
+	<section id="earn-points" class="section">
+		<div class="section-head">
+			<span class="num">1</span>
+			<div>
+				<h2>ลูกค้าจะได้แต้มยังไง? (การสะสมแต้ม)</h2>
+				<p>ง่ายมาก แค่ใส่เบอร์ ปิดบิลตามปกติ แต้มคำนวณให้อัตโนมัติ</p>
+			</div>
+		</div>
+		<div class="grid grid-2">
+			<div class="panel">
+				<h4>📱 ขั้นตอนการคิดเงิน</h4>
+				<ol class="steps">
+					<li>ใส่ <strong>เบอร์โทรศัพท์ลูกค้า</strong> ในบิลให้ถูกต้อง</li>
+					<li>คิดค่าบริการตามปกติ</li>
+					<li>กด <strong>"ชำระเงิน"</strong> ปิดบิลเรียบร้อย แต้มจะเข้าทันที</li>
+				</ol>
+			</div>
+			<div class="panel emerald">
+				<h4>💬 สรุปบิลเด้งเข้า LINE อัตโนมัติ</h4>
+				<p>
+					ถ้าลูกค้าผูก LINE ร้านไว้แล้ว พอเรากดปิดบิลเสร็จปุ๊บ ระบบจะส่ง
+					<strong>การ์ดสรุปบิลสองภาษา (ไทย/อังกฤษ)</strong> ยอดเงิน + แต้มสะสม เข้า LINE ลูกค้าอัตโนมัติทันที
+					แคชเชียร์ไม่ต้องทำอะไรเพิ่มเลยค่ะ!
+				</p>
+			</div>
+		</div>
+		<div class="panel slate" style="margin-top: 0.85rem">
+			<div class="formula">
+				<span>💰 สูตรการคิดแต้ม (จำง่ายๆ)</span>
+				<span class="chip">ทุก 400 บาทสุทธิ = 1 แต้ม (ปัดเศษทิ้ง)</span>
+			</div>
+			<p class="lede" style="margin-bottom: 0.7rem">
+				คิดจากยอดชำระจริง <strong>"หลังหักส่วนลดทั้งหมดแล้ว"</strong> เท่านั้น
+			</p>
+			<div class="stat-grid">
+				<div class="stat">
+					<small>ยอดจ่ายจริง 750 บ.</small>
+					<b>1 แต้ม</b>
+					<span>(เศษ 350 บ. ปัดลง)</span>
+				</div>
+				<div class="stat">
+					<small>ยอดจ่ายจริง 800 บ.</small>
+					<b>2 แต้ม</b>
+					<span>(พอดี 400 × 2)</span>
+				</div>
+				<div class="stat">
+					<small>ยอดจ่ายจริง 1,290 บ.</small>
+					<b>3 แต้ม</b>
+					<span>(เศษ 90 บ. ปัดลง)</span>
+				</div>
+			</div>
+		</div>
+		<div class="panel red" style="margin-top: 0.85rem">
+			<h4>❌ 2 สิ่งที่ "ไม่ได้แต้ม"</h4>
+			<ul class="clean">
+				<li>
+					<strong>บริการที่ใช้แต้มแลกฟรี (ราคา ฿0):</strong> เฉพาะตัวรายการแลกฟรีจะไม่ได้แต้มเพิ่ม
+					(แต่ถ้ามีบริการอื่นที่จ่ายเงินในบิลเดียวกัน ส่วนที่จ่ายเงินยังได้แต้มปกติ)
+				</li>
+				<li>
+					<strong>บิลซื้อเครดิต / ซื้อแพ็กเกจล่วงหน้า:</strong> ซื้อคอร์สหรือแพ็กเกจ (ชำระแบบ Credit /
+					แพ็กเกจ) จะไม่นับแต้ม — ดู <a href="/credit/">คู่มือเครดิต</a>
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<section id="redeem-points" class="section">
+		<div class="section-head">
+			<span class="num amber">2</span>
+			<div>
+				<div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.45rem">
+					<h2>การแลกแต้มของรางวัล</h2>
+					<span class="chip">ทำที่เคาน์เตอร์เท่านั้น</span>
+				</div>
+				<p>
+					ลูกค้าเปิดดูแต้มใน LINE ได้ แต่ถ้าจะแลก ต้องให้แคชเชียร์กดปุ่ม <strong>แลกรางวัล</strong> ใน POS
+					เท่านั้น — ไม่มีแลกเองใน LINE และไม่ใช้ MyCustomer
+				</p>
+			</div>
+		</div>
+
+		<div class="panel">
+			<h4>🛠️ 4 สเต็ปกดแลกแต้มใน POS (จอคิดเงินปัจจุบัน)</h4>
+			<div class="grid grid-4">
+				<div class="card">
+					<h3>สเต็ป 1: ใส่เบอร์โทร</h3>
+					<p>พิมพ์เบอร์ลูกค้าในช่องเบอร์โทรบนบิล ระบบจะโชว์การ์ดสะสมแต้มทันที</p>
+				</div>
+				<div class="card">
+					<h3>สเต็ป 2: ดูแต้มบนการ์ด</h3>
+					<p>ดูการ์ดสะสมแต้ม (โทนชมพูร้าน) ว่ามีแต้มพอไหม และ <strong>แลกวันนี้ x/2</strong> ยังไม่เต็มโควตา</p>
+				</div>
+				<div class="card">
+					<h3>สเต็ป 3: กด [แลกรางวัล]</h3>
+					<p>กดปุ่ม <strong>แลกรางวัล</strong> เลือกของรางวัล — ถ้าเป็นตัดหนังหรือทาสีเจล ให้เลือก <strong>มือ หรือ เท้า</strong> ด้วย</p>
+				</div>
+				<div class="card">
+					<h3>สเต็ป 4: ปิดบิลรายการฟรี</h3>
+					<p>รายการฟรี <strong>฿0</strong> จะเข้าบิล แล้วกดชำระเงินตามปกติ (อย่าเลือก Credit / แพ็กเกจ แทนการแลกแต้ม)</p>
+				</div>
+			</div>
+		</div>
+
+		<div style="margin-top: 1.1rem">
+			<div class="formula">
+				<span>🎁 ตารางบริการที่แลกแต้มได้ (มี 4 รายการนี้เท่านั้น)</span>
+				<span class="muted">แต้มไม่ถึง แลกไม่ได้นะจ๊ะ</span>
+			</div>
+			<div class="grid grid-4">
+				<div class="reward">
+					<div>
+						<div class="emoji">✂️</div>
+						<div class="kind">งานเล็บ</div>
+						<h4>ตัดหนัง</h4>
+						<p>ตัดหนังมือ หรือ ตัดหนังเท้า — เลือกมือ/เท้าตอนกดแลก</p>
+					</div>
+					<div class="pts"><span class="muted">ใช้แต้ม</span><b>8 <small>แต้ม</small></b></div>
+				</div>
+				<div class="reward">
+					<div>
+						<div class="emoji">💅</div>
+						<div class="kind">งานเล็บ</div>
+						<h4>ทาสีเจล</h4>
+						<p>ทาสีเจลมือ หรือ ทาสีเจลเท้า — เลือกมือ/เท้าตอนกดแลก</p>
+					</div>
+					<div class="pts"><span class="muted">ใช้แต้ม</span><b>10 <small>แต้ม</small></b></div>
+				</div>
+				<div class="reward amber">
+					<div>
+						<div class="emoji">✨</div>
+						<div class="kind">งานแว็กซ์</div>
+						<h4>แว็กซ์คิ้ว</h4>
+						<p>จัดแต่งทรงคิ้วสวยเป๊ะ</p>
+					</div>
+					<div class="pts"><span class="muted">ใช้แต้ม</span><b>10 <small>แต้ม</small></b></div>
+				</div>
+				<div class="reward purple">
+					<div>
+						<div class="emoji">👁️</div>
+						<div class="kind">งานขนตา</div>
+						<h4>ต่อขนตา</h4>
+						<p>เฉพาะทรง 3D / 6D / 15D เท่านั้น</p>
+					</div>
+					<div class="pts"><span class="muted">ใช้แต้ม</span><b>50 <small>แต้ม</small></b></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="alert" style="margin-top: 1.1rem">
+			<h4>🛑 กฎเหล็กการแลกแต้ม (ห้ามลืมเด็ดขาด!)</h4>
+			<div class="grid grid-3">
+				<div class="card soft-red">
+					<h3>❌ ขนตาที่ห้ามแลก</h3>
+					<p>ห้ามแลก <strong>Mega Volume</strong>, <strong>เติมขนตา</strong> และ <strong>ลิฟท์ติ้ง</strong> ขนตา/คิ้ว ทุกกรณี!</p>
+				</div>
+				<div class="card soft-red">
+					<h3>❌ ห้ามซ้อนโปร/ส่วนลด</h3>
+					<p>บิลที่มีรายการแลกแต้ม <strong>ไม่สามารถใส่ส่วนลดหรือโปรโมชั่นอื่นได้</strong> (ระบบล็อกให้อัตโนมัติ)</p>
+				</div>
+				<div class="card soft-red">
+					<h3>⏱️ โควตาต่อวัน</h3>
+					<p>1 เบอร์แลกได้สูงสุด <strong>ไม่เกิน 2 ครั้ง/วัน</strong> และทำรายการได้ <strong>ครั้งละ 1 รายการ</strong></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel slate" style="margin-top: 1.1rem">
+			<div class="formula">
+				<span>🖥️ จอ POS ปัจจุบัน: การ์ดสะสมแต้ม + หน้าต่างแลกรางวัล</span>
+				<span class="muted">แตะรูปเพื่อขยายใหญ่</span>
+			</div>
+			<p class="lede" style="margin-bottom: 0.85rem">
+				📌 <strong>จอปัจจุบัน:</strong> แต้มและโควตาอยู่บน <strong>การ์ดสะสมแต้มโทนชมพูร้าน</strong>
+				(แต้มคงเหลือ + <code>แลกวันนี้ x/2</code> + ปุ่ม <strong>แลกรางวัล</strong>) —
+				<strong>ไม่มีกล่องสีเหลืองให้หาแล้วค่ะ</strong>
+			</p>
+			<div class="grid grid-2">
+				<figure class="shot">
+					<button
+						type="button"
+						data-lightbox
+						data-src="/images/crm/screen-loyalty-card.png"
+						data-title="การ์ดสะสมแต้มในจอ POS — แต้มคงเหลือ, แลกวันนี้, ปุ่มแลกรางวัล และสร้างรหัส LINE"
+					>
+						<img
+							src="/images/crm/screen-loyalty-card.png"
+							width="475"
+							height="950"
+							alt="จอ POS หลังใส่เบอร์ โชว์การ์ดสะสมแต้มโทนชมพู แต้มคงเหลือ และปุ่มแลกรางวัล"
+						/>
+					</button>
+					<figcaption>
+						สเต็ป 1–2: การ์ดชมพูหลังใส่เบอร์ — แต้มคงเหลือ + แลกวันนี้ + ปุ่มแลกรางวัล · ช่อง Member
+						ด้านล่าง = Credit / แพ็กเกจ (ไม่หักแต้ม)
+					</figcaption>
+				</figure>
+				<figure class="shot">
+					<button
+						type="button"
+						data-lightbox
+						data-src="/images/crm/screen-redeem.png"
+						data-title="หน้าต่างแลกรางวัลด้วยแต้ม — เลือกตัดหนังมือหรือเท้า แล้วกดใส่บริการฟรีในบิล"
+					>
+						<img
+							src="/images/crm/screen-redeem.png"
+							width="499"
+							height="1094"
+							alt="หน้าต่างแลกรางวัลด้วยแต้ม เลือกตัดหนังมือหรือเท้า แล้วกดใส่บริการฟรีในบิล"
+						/>
+					</button>
+					<figcaption>
+						สเต็ป 3–4: เลือกของรางวัล (ตัดหนัง/ทาสีเจลเลือกมือหรือเท้า) แล้วกดใส่บริการฟรีในบิล
+					</figcaption>
+				</figure>
+			</div>
+		</div>
+	</section>
+
+	<section id="link-line" class="section">
+		<div class="section-head">
+			<span class="num emerald">3</span>
+			<div>
+				<h2>วิธีช่วยลูกค้า "ผูก LINE" (ทำครั้งเดียวจบ)</h2>
+				<p>ผูก LINE แล้ว ลูกค้าดูแต้ม + ประวัติได้เอง และหลังปิดบิลจะได้การ์ดสรุปบิลสองภาษา</p>
+			</div>
+		</div>
+		<div class="grid grid-2">
+			<div class="card soft-emerald">
+				<div style="margin-bottom: 0.45rem">
+					<span class="line-ok">LINE ✓</span>
+					<strong> ถ้าขึ้นแบบนี้: แปลว่า "ผูกแล้ว"</strong>
+				</div>
+				<p>ไม่ต้องทำอะไรเพิ่ม คิดเงินได้ตามปกติเลย หลังคิดเงินบิลจะเด้งเข้า LINE ลูกค้าเองอัตโนมัติ</p>
+			</div>
+			<div class="card sky">
+				<div style="margin-bottom: 0.45rem">
+					<span class="line-wait">ยังไม่ผูก LINE</span>
+					<strong> ถ้ายังไม่ขึ้น LINE ✓</strong>
+				</div>
+				<p>
+					กด <strong>สร้างรหัส</strong> ให้ลูกค้าผูก LINE ตาม 3 สเต็ปด้านล่าง —
+					<strong>เบอร์ใหม่ที่ยังไม่มีประวัติก็กดได้เลย</strong> ไม่ต้องเปิด MyCustomer
+				</p>
+			</div>
+		</div>
+		<div class="panel sky" style="margin-top: 0.85rem">
+			<h4>📲 3 ขั้นตอนผูก LINE หน้าเคาน์เตอร์</h4>
+			<div class="grid grid-3">
+				<div class="step-mini">
+					<div class="n">1</div>
+					<h3>กดปุ่ม [สร้างรหัส]</h3>
+					<p>กดปุ่ม <strong>สร้างรหัส</strong> บนจอคิดเงิน (แถวเบอร์โทร / สถานะ LINE) — เบอร์ใหม่ก็สร้างได้</p>
+				</div>
+				<div class="step-mini">
+					<div class="n">2</div>
+					<h3>บอกรหัส 6 หลักกับลูกค้า</h3>
+					<p>หน้าต่างจะเด้ง <strong>ตัวเลข 6 หลักใหญ่ชัด</strong> กดคัดลอกได้ รหัสใช้ได้ประมาณ <strong>8 นาที</strong></p>
+				</div>
+				<div class="step-mini">
+					<div class="n">3</div>
+					<h3>ลูกค้าใส่รหัสใน LINE</h3>
+					<p>เปิด LINE OA BillioNail กดเมนูแต้ม แล้วพิมพ์เบอร์โทร + รหัส 6 หลัก กดตกลงแล้วจะขึ้น LINE ✓</p>
+				</div>
+			</div>
+			<div class="quote" style="margin-top: 0.85rem">
+				<span aria-hidden="true">🗣️</span>
+				<div>
+					<strong>ตัวอย่างคำพูดชวนลูกค้าผูก LINE:</strong><br />
+					<em
+						>«คุณพี่คะ รบกวนเปิด LINE ร้าน BillioNail กดเมนูเช็กแต้ม แล้วใส่รหัส 6 ตัวนี้ได้เลยนะคะ
+						จะได้ดูแต้มและรับใบเสร็จในไลน์ได้สะดวกค่ะ»</em
+					>
+				</div>
+			</div>
+		</div>
+		<div class="grid grid-2" style="margin-top: 0.85rem">
+			<figure class="shot">
+				<button
+					type="button"
+					data-lightbox
+					data-src="/images/crm/screen-loyalty-card.png"
+					data-title="ปุ่มสร้างรหัสผูก LINE บนการ์ดสะสมแต้มในจอ POS"
+				>
+					<img
+						src="/images/crm/screen-loyalty-card.png"
+						width="475"
+						height="950"
+						alt="ปุ่มสร้างรหัสผูก LINE บนการ์ดสะสมแต้มใน POS"
+					/>
+				</button>
+				<figcaption>
+					จุดกดปุ่มดำ <code>สร้างรหัส</code> บนการ์ดชมพู แถวเบอร์โทร — เบอร์ใหม่ที่ยังไม่มีประวัติก็กดได้
+				</figcaption>
+			</figure>
+			<figure class="shot">
+				<button
+					type="button"
+					data-lightbox
+					data-src="/images/crm/screen-modal-code.png"
+					data-title="หน้าต่างรหัสผูกบัญชี LINE — ตัวเลข 6 หลักใหญ่ คัดลอกรหัส และลูกค้ากรอกแล้ว"
+				>
+					<img
+						src="/images/crm/screen-modal-code.png"
+						width="479"
+						height="954"
+						alt="หน้าต่างรหัสผูกบัญชี LINE โชว์รหัส 6 หลัก ปุ่มคัดลอกรหัส และปุ่มลูกค้ากรอกแล้ว"
+					/>
+				</button>
+				<figcaption>
+					สเต็ป 2: รหัส 6 หลัก — อ่านให้ลูกค้าหรือกดคัดลอก ใช้ได้ประมาณ 8 นาที
+				</figcaption>
+			</figure>
+		</div>
+	</section>
+
+	<section id="prohibitions" class="section">
+		<div class="section-head">
+			<span class="num rose">4</span>
+			<div>
+				<h2>ข้อห้ามเด็ดขาด & การส่งต่อให้แอดมิน</h2>
+				<p>เรื่องที่แคชเชียร์ไม่ควรทำเอง เพื่อป้องกันแต้มลูกค้าหายหรือผิดพลาด</p>
+			</div>
+		</div>
+		<div class="grid grid-3">
+			<div class="card soft-red">
+				<div>
+					<div class="emoji" style="font-size:1.5rem;margin-bottom:0.35rem">🚫</div>
+					<h3>อย่าเดาเบอร์ / ห้ามสร้างซ้ำ</h3>
+					<p>
+						แต้มผูกติดอยู่กับเบอร์โทรศัพท์ ถ้าสะกดผิดแต้มจะไปเข้าเบอร์คนอื่น
+						<strong>หากพิมพ์เบอร์ผิดไปแล้ว อย่าสร้างลูกค้าใหม่ขึ้นมาซ้ำ</strong> ให้แจ้งแอดมินแก้ใน CRM แต้ม
+					</p>
+				</div>
+				<div class="card-foot red">👉 ผิดปุ๊บ ส่งแอดมินแก้ปั๊บ</div>
+			</div>
+			<div class="card soft-amber">
+				<div>
+					<div class="emoji" style="font-size:1.5rem;margin-bottom:0.35rem">⚖️</div>
+					<h3>อย่าสัญญาแลกนอกตาราง</h3>
+					<p>
+						แลกได้เฉพาะ 4 รายการตามตารางเท่านั้น (ตัดหนัง 8, ทาสีเจล 10, แว็กซ์คิ้ว 10, ต่อขนตา 3D/6D/15D 50)
+						ห้ามรับปากของอื่นหรือให้ส่วนลดซ้อน
+					</p>
+				</div>
+				<div class="card-foot amber">👉 ตารางตามระบบเท่านั้น</div>
+			</div>
+			<div class="card soft-slate">
+				<div>
+					<div class="emoji" style="font-size:1.5rem;margin-bottom:0.35rem">💻</div>
+					<h3>เลิกใช้ MyCustomer แล้ว!</h3>
+					<p>
+						แคชเชียร์ใช้แค่ <strong>ระบบ POS หน้าร้าน + LINE OA ของร้าน</strong> เท่านั้น ไม่ต้องเปิดแอปอื่นอีก
+					</p>
+				</div>
+				<div class="card-foot slate">👉 ใช้แค่ POS + LINE</div>
+			</div>
+		</div>
+		<div class="dark-callout" style="margin-top: 0.9rem">
+			<h4>🚨 เวลาเจอเคสเบอร์ผิด หรือแต้มไม่ตรง ต้องแจ้งแอดมินยังไง?</h4>
+			<p>
+				จดข้อมูล 3 อย่างนี้: <strong>1) ชื่อลูกค้า 2) เบอร์เดิมที่พิมพ์ผิด 3) เบอร์ที่ถูกต้อง</strong>
+				แล้วส่งในกลุ่มไลน์แอดมิน เพื่อให้แอดมินเข้าไปควบรวมแต้มในระบบ CRM ให้ค่ะ
+			</p>
+		</div>
+	</section>
+
+	<section id="faq" class="section">
+		<div class="section-head">
+			<span class="num indigo">5</span>
+			<div>
+				<h2>คำถามพบบ่อยหน้าร้าน (FAQ)</h2>
+				<p>รวมคำถามที่ลูกค้าถามบ่อย พร้อมแนวทางการตอบแบบมืออาชีพ</p>
+			</div>
+		</div>
+		<div class="grid">
+			<details class="faq" open>
+				<summary><span style="color:var(--brand-600)">Q:</span> ลูกค้าไม่มี LINE จะได้แต้มไหม?</summary>
+				<div class="faq-body">
+					<p>
+						<strong>ตอบ:</strong> <span style="color:var(--emerald-700);font-weight:700">ได้แต้มแน่นอน 100% ค่ะ!</span>
+						ขอแค่ใส่เบอร์โทรในบิลให้ถูกต้อง แต้มผูกกับเบอร์ ไม่ต้องมี LINE ก็แลกที่เคาน์เตอร์ได้
+					</p>
+					<div class="say">
+						💬 «ได้แต้มแน่นอนค่ะคุณพี่ ระบบผูกแต้มกับเบอร์โทรไว้ให้แล้ว ครั้งหน้ามาใช้บริการบอกเบอร์ก็เช็กแต้มแลกของรางวัลได้เลยค่ะ»
+					</div>
+				</div>
+			</details>
+			<details class="faq">
+				<summary><span style="color:var(--brand-600)">Q:</span> ใส่เบอร์ผิด บิลปิดแล้ว แก้ยังไง?</summary>
+				<div class="faq-body">
+					<p>
+						<strong>ตอบ:</strong> <span style="color:var(--red-600);font-weight:700">ห้ามสร้างลูกค้าใหม่เองซ้ำเด็ดขาด!</span>
+						ให้แจ้งแอดมินพร้อมเลขบิล หรือเบอร์ที่พิมพ์ผิด และเบอร์ที่ถูก แอดมินย้ายแต้มใน CRM แต้มได้
+					</p>
+				</div>
+			</details>
+			<details class="faq">
+				<summary><span style="color:var(--brand-600)">Q:</span> ทำไมใน LINE ไม่มีปุ่มกดแลกเอง?</summary>
+				<div class="faq-body">
+					<p>
+						LINE ให้ดูแต้ม ประวัติบิล และผูกบัญชีด้วยรหัส 6 หลัก เท่านั้น ถ้าจะแลก ให้แจ้งแคชเชียร์ตอนชำระเงิน
+					</p>
+					<div class="say">
+						💬 «การแลกแต้มรับบริการฟรี ต้องทำผ่านหน้าเคาน์เตอร์กับพนักงานตอนชำระเงินนะคะ
+						เพื่อให้ระบบออกบิลยอด 0 บาทและจองคิวบริการให้ถูกต้องค่ะ»
+					</div>
+				</div>
+			</details>
+			<details class="faq">
+				<summary>
+					<span style="color:var(--brand-600)">Q:</span> มี 20 แต้ม ขอยกยอดแลกทาสีเจล 2 ครั้งในบิลเดียวได้ไหม?
+				</summary>
+				<div class="faq-body">
+					<p>
+						ใน 1 วัน 1 เบอร์แลกได้สูงสุด 2 ครั้ง แต่ต้องทำ <strong>ครั้งละ 1 รายการ</strong>
+						ใส่ของแลกฟรี 2 ชิ้นในบิลเดียวกันไม่ได้
+					</p>
+				</div>
+			</details>
+			<details class="faq hot">
+				<summary>
+					<span style="color:var(--brand-600)">Q:</span> กดชำระแบบ Member / Credit / แพ็กเกจ คือการแลกแต้มไหม?
+				</summary>
+				<div class="faq-body">
+					<p>
+						<strong>ตอบ:</strong> <span style="color:var(--red-600);font-weight:700">ไม่ใช่ค่ะ!</span>
+						แลกแต้ม = ปุ่มแลกรางวัลเท่านั้น <strong>Credit / แพ็กเกจ</strong> คือการใช้กระเป๋าเครดิตที่ลูกค้าซื้อไว้
+						— ไม่หักแต้ม · วิธีใช้เครดิตอ่านที่ <a href="/credit/">คู่มือเครดิตสมาชิก</a>
+					</p>
+					<div class="say">
+						💬 «ใช้แพ็กเกจที่ซื้อไว้กับแลกแต้มเป็นคนละอย่างนะคะ ถ้าจะแลกแต้มให้บริการฟรี พนักงานจะกดปุ่มแลกรางวัลให้ค่ะ»
+					</div>
+				</div>
+			</details>
+		</div>
+	</section>
+
+	<section id="calculator" class="calc">
+		<div class="formula">
+			<div>
+				<h2 style="margin:0;font-size:1.15rem">🧮 เครื่องคิดแต้มจำลอง</h2>
+				<p class="lede">แคชเชียร์ลองกดกรอกยอดเงินเพื่อซ้อมคิดแต้มดูได้เลยค่ะ</p>
+			</div>
+			<span class="chip">สูตร 400 บ. = 1 แต้ม</span>
+		</div>
+		<div class="calc-grid">
+			<div>
+				<label class="field" for="calc-amount">ยอดชำระสุทธิ (หลังหักส่วนลดทั้งหมดแล้ว)</label>
+				<div class="money">
+					<span>฿</span>
+					<input id="calc-amount" type="number" value="850" min="0" step="10" />
+				</div>
+				<label class="check">
+					<input id="calc-is-free" type="checkbox" />
+					เป็นบริการที่ใช้สิทธิ์แลกฟรี (ราคา ฿0)
+				</label>
+				<label class="check">
+					<input id="calc-is-package" type="checkbox" />
+					เป็นบิลซื้อแพ็กเกจ / เครดิตล่วงหน้า (Credit · แพ็กเกจ)
+				</label>
+				<div class="quick">
+					<button type="button" data-amt="399">399 บ.</button>
+					<button type="button" data-amt="400">400 บ.</button>
+					<button type="button" data-amt="800">800 บ.</button>
+					<button type="button" data-amt="1250">1,250 บ.</button>
+					<button type="button" data-amt="2000">2,000 บ.</button>
+				</div>
+			</div>
+			<div class="calc-out">
+				<div class="muted">แต้มสะสมที่ลูกค้าจะได้รับ</div>
+				<div id="calc-points" class="big">2 แต้ม</div>
+				<div id="calc-explain" class="calc-explain">ยอด ฿850 = ได้ 2 แต้ม (เศษ ฿50 ปัดทิ้ง)</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="missing">
+		<span class="pill" style="text-transform:none;letter-spacing:0">แคปจอ POS อัปเดต 20 ก.ย. 2026</span>
+		<h2 style="margin:0.4rem 0 0.35rem;font-size:1.15rem">รูปในคู่มือนี้ตรงกับจอคิดเงินปัจจุบันแล้ว</h2>
+		<p class="lede">
+			การ์ดสะสมแต้มโทนชมพู, หน้าต่างรหัสผูก LINE 6 หลัก และหน้าต่างแลกรางวัลด้วยแต้ม ใส่ไว้ในหัวข้อด้านบนแล้ว
+		</p>
+		<div class="grid grid-2" style="margin-top: 0.85rem">
+			<div class="card">
+				<h3>หน้า LINE ที่ลูกค้ากรอกรหัส</h3>
+				<p>ภาพมือถือลูกค้าตอนพิมพ์รหัส 6 หลักในแชท LINE ร้าน — ยังไม่มีในคู่มือนี้</p>
+			</div>
+			<div class="card">
+				<h3>บิลหลังใส่บริการฟรี ฿0</h3>
+				<p>ภาพบิลหลังกดใส่บริการฟรีในบิล แล้วรายการแลกขึ้นราคา ฿0 — ส่งมาได้ถ้าอยากโชว์ผลลัพธ์หลังแลก</p>
+			</div>
+		</div>
+	</section>
+</GuideLayout>
+
+<script>
+	function calculatePoints() {
+		const amountInput = document.getElementById('calc-amount') as HTMLInputElement | null;
+		const isFree = (document.getElementById('calc-is-free') as HTMLInputElement | null)?.checked;
+		const isPackage = (document.getElementById('calc-is-package') as HTMLInputElement | null)?.checked;
+		const pointsDisplay = document.getElementById('calc-points');
+		const explainDisplay = document.getElementById('calc-explain');
+		if (!amountInput || !pointsDisplay || !explainDisplay) return;
+
+		const amount = Math.max(0, parseFloat(amountInput.value) || 0);
+
+		if (isFree) {
+			pointsDisplay.textContent = '0 แต้ม';
+			explainDisplay.textContent = 'บริการแลกฟรี (ราคา 0 บาท) จะไม่ได้รับแต้มสะสมค่ะ';
+			return;
+		}
+		if (isPackage) {
+			pointsDisplay.textContent = '0 แต้ม';
+			explainDisplay.textContent = 'การซื้อแพ็กเกจ / เครดิตล่วงหน้า จะไม่นับแต้มในระบบนี้ค่ะ';
+			return;
+		}
+
+		const points = Math.floor(amount / 400);
+		const remainder = amount % 400;
+		pointsDisplay.textContent = `${points} แต้ม`;
+		if (points === 0) {
+			explainDisplay.textContent = `ยอด ฿${amount.toLocaleString()} ยังไม่ถึง 400 บาท (ขาดอีก ฿${(400 - remainder).toLocaleString()} จะได้ 1 แต้ม)`;
+		} else {
+			explainDisplay.textContent = `ยอด ฿${amount.toLocaleString()} = ได้ ${points} แต้ม (เศษ ฿${remainder.toLocaleString()} ปัดทิ้ง)`;
+		}
+	}
+
+	document.getElementById('calc-amount')?.addEventListener('input', calculatePoints);
+	document.getElementById('calc-is-free')?.addEventListener('change', calculatePoints);
+	document.getElementById('calc-is-package')?.addEventListener('change', calculatePoints);
+	document.querySelectorAll<HTMLButtonElement>('[data-amt]').forEach((btn) => {
+		btn.addEventListener('click', () => {
+			const input = document.getElementById('calc-amount') as HTMLInputElement | null;
+			if (!input) return;
+			input.value = btn.dataset.amt || '0';
+			calculatePoints();
+		});
+	});
+	calculatePoints();
+</script>

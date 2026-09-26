@@ -106,9 +106,24 @@ const tabs = [
 					<li>ปุ่มวงกลมขนาดใหญ่ตรงกลางสำหรับกดลงเวลา</li>
 					<li>แถบแสดงสถานะ GPS <em>(บอกว่าจับสัญญาณได้แล้ว หรืออยู่นอกพื้นที่ร้าน)</em></li>
 				</ul>
-				<p class="lede" style="margin-top: 0.7rem; margin-bottom: 0">
-					📷 แคปจอยังไม่มีในคู่มือนี้ — จะใส่ทีหลังเมื่อมีรูปจริง
-				</p>
+				<figure class="shot" style="margin-top: 0.85rem">
+					<button
+						type="button"
+						data-lightbox
+						data-src="/images/timeclock/screen-overview.png"
+						data-title="จอลงเวลาจริงบนมือถือ — สาขา Central, GPS นอกรัศมี ต้องถ่ายรูปยืนยันก่อนกดเข้างาน"
+					>
+						<img
+							src="/images/timeclock/screen-overview.png"
+							width="491"
+							height="1024"
+							alt="จอลงเวลาจริงบนมือถือ สาขา Central สถานะ GPS นอกรัศมี ปุ่มใหญ่ยืนยันเข้างาน และปุ่มพักเที่ยง/กลับจากพัก/ออกงาน"
+						/>
+					</button>
+					<figcaption>
+						จอลงเวลาจริง (มือถือ) — สาขา Central, สถานะ GPS นอกรัศมี จึงต้องถ่ายรูปยืนยันก่อนกดเข้างาน · ปุ่มใหญ่ยืนยันเข้างาน + พักเที่ยง/กลับจากพัก/ออกงาน ด้านล่าง (ชิป POS ยังเขียน พักเที่ยง แต่คู่มือใช้คำว่า พักเบรก)
+					</figcaption>
+				</figure>
 			</div>
 		</div>
 	</section>
@@ -413,11 +428,20 @@ const tabs = [
 	</section>
 
 	<section class="missing">
-		<span class="pill" style="text-transform:none;letter-spacing:0">อัปเดต 26 ก.ย. 2026</span>
-		<h2 style="margin:0.4rem 0 0.35rem;font-size:1.15rem">รูปหน้าจอยังไม่มีในคู่มือนี้</h2>
+		<span class="pill" style="text-transform:none;letter-spacing:0">แคปจอ StaffClock อัปเดต 26 ก.ย. 2026</span>
+		<h2 style="margin:0.4rem 0 0.35rem;font-size:1.15rem">รูปภาพรวมจอลงเวลาใส่ในหัวข้อ 1 แล้ว</h2>
 		<p class="lede">
-			ยังไม่มีแคปจอ time-clock ในรีโป — ใช้ลำดับขั้นตอนด้านบนกับจอจริงก่อน จะใส่รูปแผนที่ ปุ่มวงกลม
-			และสถานะรออนุมัติทีหลังเมื่อมีแคปจริง
+			แคปจอภาพรวมจริง (มือถือ · สาขา Central · GPS นอกรัศมี) อยู่ในส่วน <strong>เปิดหน้าจอลงเวลา</strong> ด้านบนแล้ว — กดรูปเพื่อขยาย
 		</p>
+		<div class="grid grid-2" style="margin-top: 0.85rem">
+			<div class="card">
+				<h3>จอเมื่ออยู่ในรัศมีสาขา</h3>
+				<p>ภาพตอน GPS อยู่ในวงแล้ว กดเข้างานได้ทันทีโดยไม่ต้องถ่ายรูป — ยังไม่มีในคู่มือนี้ (ใส่ทีหลังได้)</p>
+			</div>
+			<div class="card">
+				<h3>จอสถานะรออนุมัติ</h3>
+				<p>ภาพหลังกดเข้างานแล้วยังรอหัวหน้าอนุมัติ — ยังไม่มีในคู่มือนี้ (ใส่ทีหลังได้)</p>
+			</div>
+		</div>
 	</section>
 </GuideLayout>

@@ -101,7 +101,9 @@ img {
 code {
 	font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
 	font-size: 0.85em;
-	background: var(--brand-50);
+	/* Explicit color: chip bg is light; never inherit hero/dark-callout white text */
+	color: var(--brand-700);
+	background: #fff;
 	border: 1px solid var(--rose-200);
 	border-radius: 0.35rem;
 	padding: 0.05rem 0.3rem;

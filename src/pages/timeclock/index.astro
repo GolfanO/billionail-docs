@@ -1,0 +1,354 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const tabs = [
+	{ href: '#remember', label: '📌 จำ 3 ข้อ' },
+	{ href: '#open', label: '1. เปิดหน้าลงเวลา' },
+	{ href: '#gps', label: '2. GPS / ในร้าน' },
+	{ href: '#clock-in', label: '3. เข้างาน' },
+	{ href: '#outside', label: '4. นอกวง GPS' },
+	{ href: '#break', label: '5. พักเที่ยง' },
+	{ href: '#clock-out', label: '6. ออกงาน' },
+	{ href: '#dont', label: '7. ข้อห้าม' },
+	{ href: '#faq', label: '8. FAQ' },
+];
+---
+
+<GuideLayout
+	title="คู่มือพนักงาน BillioNail — ลงเวลาทำงาน"
+	description="คู่มือลงเวลาพนักงาน BillioNail — เข้างาน ออกงาน พักเที่ยง ผ่าน POS ที่ pos.billionail.com/time-clock"
+	heading="คู่มือพนักงาน — ลงเวลาทำงาน"
+	current="timeclock"
+	tabs={tabs}
+>
+	<section class="hero">
+		<span class="hero__badge">✨ อ่านจบใน 3 นาที พร้อมกดลงเวลาได้ทันที</span>
+		<h2>คู่มือลงเวลาทำงาน</h2>
+		<p>
+			พนักงานใช้หน้าลงเวลาใน <strong>POS</strong> เท่านั้น หลังล็อกอิน Google แล้วเปิด
+			<code>https://pos.billionail.com/time-clock</code> — ไม่มีโดเมนลงเวลาแยก
+			กดลงเวลาในสาขา <strong>Central / Samkong / Chalong</strong> เท่านั้น (ไม่มี Devadiva)
+		</p>
+		<span class="hero__mark" aria-hidden="true">⏰</span>
+	</section>
+
+	<section id="remember" class="grid grid-3">
+		<div class="card">
+			<div>
+				<div class="icon-box">1</div>
+				<h3>เปิดผ่าน POS อย่างเดียว</h3>
+				<p>
+					ล็อกอิน Google ใน POS แล้วเข้าเมนูลงเวลา หรือเปิด
+					<strong>pos.billionail.com/time-clock</strong> โดยตรง
+				</p>
+			</div>
+			<div class="card-foot">📱 ไม่มีแอป / โดเมน staff แยก</div>
+		</div>
+		<div class="card amber">
+			<div>
+				<div class="icon-box amber">2</div>
+				<h3>อนุญาต GPS แล้วกดในร้าน</h3>
+				<p>
+					อนุญาตตำแหน่งในเบราว์เซอร์ กดลงเวลาตอนอยู่ในวง GPS ของสาขาจะผ่านเร็ว ไม่ต้องรออนุมัติ
+				</p>
+			</div>
+			<div class="card-foot amber">📍 ในรัศมี = ลงเวลาได้เลย</div>
+		</div>
+		<div class="card emerald">
+			<div>
+				<div class="icon-box emerald">3</div>
+				<h3>นอกวง = ถ่ายรูป + รออนุมัติ</h3>
+				<p>
+					ถ้านอกรัศมี ระบบให้ถ่ายรูป ยืนยันรูป แล้วกดลงเวลา สถานะจะเป็น
+					<strong>รออนุมัติ</strong> จนกว่าผู้จัดการจะอนุมัติ
+				</p>
+			</div>
+			<div class="card-foot emerald">📷 อย่าปิดกล้อง / อย่าส่งรูปเก่า</div>
+		</div>
+	</section>
+
+	<section id="open" class="section">
+		<div class="section-head">
+			<span class="num">1</span>
+			<div>
+				<h2>เปิดหน้าลงเวลายังไง</h2>
+				<p>ใช้บัญชี Google ของพนักงานใน POS — ไม่มีหน้า staff แยก</p>
+			</div>
+		</div>
+		<div class="grid grid-2">
+			<div class="panel">
+				<h4>📱 ลำดับเปิดหน้า</h4>
+				<ol class="steps">
+					<li>เปิดเบราว์เซอร์ (มือถือหรือแท็บเล็ตหน้าร้าน) ไปที่ <strong>pos.billionail.com</strong></li>
+					<li>ล็อกอินด้วย <strong>บัญชี Google ของตัวเอง</strong> (อย่าใช้บัญชีคนอื่น)</li>
+					<li>
+						เปิดหน้าลงเวลา — จากเมนูใน POS หรือเปิดตรง
+						<code>https://pos.billionail.com/time-clock</code>
+					</li>
+					<li>เลือกสาขาที่ลงเวลานั้น: <strong>Central / Samkong / Chalong</strong> เท่านั้น</li>
+				</ol>
+			</div>
+			<div class="panel sky">
+				<h4>🖥️ จอประมาณนี้</h4>
+				<ul class="clean">
+					<li>แผนที่ / วง geofence ของสาขา</li>
+					<li>ปุ่มวงกลมใหญ่ตรงกลางสำหรับกดลงเวลา</li>
+					<li>ชิปสถานะ GPS (ติด / ไม่ติด / นอกวง)</li>
+					<li>โทนชมพูร้านแบบ CRM</li>
+				</ul>
+				<p class="lede" style="margin-top: 0.7rem; margin-bottom: 0">
+					📷 แคปจอยังไม่มีในคู่มือนี้ — จะใส่ทีหลังเมื่อมีรูปจริง
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="gps" class="section">
+		<div class="section-head">
+			<span class="num amber">2</span>
+			<div>
+				<h2>GPS / อยู่ในร้าน</h2>
+				<p>อนุญาตตำแหน่งก่อนทุกครั้งที่เปิดหน้า — กดในรัศมีสาขาจะสะดวกสุด</p>
+			</div>
+		</div>
+		<div class="panel">
+			<h4>📍 ทำตามนี้</h4>
+			<ol class="steps">
+				<li>เมื่อเบราว์เซอร์ถามตำแหน่ง กด <strong>อนุญาต / Allow</strong></li>
+				<li>ยืนในร้านหรือใกล้เคาน์เตอร์สาขาตัวเอง รอชิป GPS ขึ้นว่าติดแล้ว</li>
+				<li>ดูแผนที่ว่าอยู่ในวง geofence สีชมพูของสาขา</li>
+				<li>ถ้า GPS ไม่ติด ให้เปิด Location ของเครื่อง + อนุญาตเบราว์เซอร์ แล้วรีเฟรชหน้า</li>
+			</ol>
+		</div>
+		<div class="panel emerald" style="margin-top: 0.85rem">
+			<h4>✅ ในรัศมี = กดได้เลย</h4>
+			<p>
+				อยู่ในวง GPS ของสาขา → กดปุ่มวงกลมใหญ่ได้ทันที ไม่ต้องถ่ายรูป ไม่ต้องรออนุมัติ
+			</p>
+		</div>
+	</section>
+
+	<section id="clock-in" class="section">
+		<div class="section-head">
+			<span class="num">3</span>
+			<div>
+				<h2>เข้างาน</h2>
+				<p>ปุ่มเขียวใหญ่ตรงกลาง — กดเมื่อพร้อมเริ่มกะ</p>
+			</div>
+		</div>
+		<div class="grid grid-2">
+			<div class="panel">
+				<h4>🟢 กดเข้างาน</h4>
+				<ol class="steps">
+					<li>เช็กว่าสาขาถูกต้อง และ GPS อยู่ในร้าน</li>
+					<li>กดปุ่มวงกลมใหญ่ <strong>เข้างาน</strong> (สีเขียว)</li>
+					<li>
+						หลังสำเร็จจะเห็นสถานะทำงาน (แบดจ์สีเหลือง) และเวลาเข้างานบนจอ
+					</li>
+				</ol>
+			</div>
+			<div class="panel slate">
+				<h4>ปุ่มที่เจอบ่อย</h4>
+				<ul class="clean">
+					<li><strong style="color:#16a34a">เข้างาน</strong> — เขียว · เริ่มกะ</li>
+					<li><strong style="color:#0ea5e9">พักเที่ยง</strong> — ฟ้าอ่อน · ออกพัก</li>
+					<li><strong style="color:#38bdf8">กลับจากพัก</strong> — ฟ้าอ่อนกว่า · กลับมาทำงาน</li>
+					<li><strong style="color:#dc2626">ออกงาน</strong> — แดง · จบกะ</li>
+					<li><strong style="color:#ea580c">รออนุมัติ / ยืนยันเข้างาน</strong> — ส้ม · รอผู้จัดการ</li>
+					<li><strong style="color:#ca8a04">กำลังทำงาน</strong> — แบดจ์เหลืองบนจอ</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section id="outside" class="section">
+		<div class="section-head">
+			<span class="num rose">4</span>
+			<div>
+				<h2>นอกวง GPS + ถ่ายรูป + รออนุมัติ</h2>
+				<p>ใช้เมื่อต้องลงเวลานอกรัศมีสาขา — อย่าทำเป็นปกติ</p>
+			</div>
+		</div>
+		<div class="panel amber">
+			<h4>📷 ลำดับนอกวง</h4>
+			<ol class="steps">
+				<li>ระบบแจ้งว่าอยู่นอกวง geofence</li>
+				<li>ถ่ายรูปตามที่หน้าจอขอ (หน้าร้าน / ตัวเองตามที่ระบบกำหนด)</li>
+				<li>ตรวจรูปให้ชัด แล้วกด <strong>ยืนยันรูป</strong></li>
+				<li>กดลงเวลาต่อ (เข้างาน / ออกงาน ตามปุ่มที่ขึ้น)</li>
+				<li>
+					สถานะจะเป็น <strong>รออนุมัติ</strong> (ส้ม) จนกว่าผู้จัดการจะอนุมัติ — อย่ากดซ้ำรัวๆ
+				</li>
+			</ol>
+		</div>
+		<div class="dark-callout" style="margin-top: 0.9rem">
+			<h4>🚨 ถ้าขึ้นรออนุมัติ</h4>
+			<p>
+				รอผู้จัดการอนุมัติในระบบ — พนักงานไม่ต้องทำอะไรเพิ่ม ถ้าค้างนานผิดปกติ ให้ทักผู้จัดการสาขา
+				อย่าสร้างคำขอซ้ำหลายรอบโดยไม่จำเป็น
+			</p>
+		</div>
+	</section>
+
+	<section id="break" class="section">
+		<div class="section-head">
+			<span class="num indigo">5</span>
+			<div>
+				<h2>พักเที่ยง / กลับจากพัก</h2>
+				<p>ใช้ระหว่างกะเมื่อร้านให้พัก — ไม่ใช่ปุ่มออกงาน</p>
+			</div>
+		</div>
+		<div class="grid grid-2">
+			<div class="card sky">
+				<div>
+					<div class="icon-box" style="background:#e0f2fe;color:#0369a1">⏸</div>
+					<h3>พักเที่ยง</h3>
+					<p>
+						กดปุ่ม <strong>พักเที่ยง</strong> (ฟ้า) เมื่อเริ่มพัก GPS ควรยังอยู่ในร้านตามปกติ
+					</p>
+				</div>
+				<div class="card-foot">อย่ากดออกงานแทนพัก</div>
+			</div>
+			<div class="card soft-emerald">
+				<div>
+					<div class="icon-box emerald">▶</div>
+					<h3>กลับจากพัก</h3>
+					<p>
+						กลับมาทำงานแล้วกด <strong>กลับจากพัก</strong> (ฟ้าอ่อน) เพื่อกลับสู่สถานะกำลังทำงาน
+					</p>
+				</div>
+				<div class="card-foot emerald">ลืมกด = เวลาพักยาวผิดจริง</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="clock-out" class="section">
+		<div class="section-head">
+			<span class="num rose">6</span>
+			<div>
+				<h2>ออกงาน</h2>
+				<p>ปุ่มแดง — กดเมื่อจบกะแล้วเท่านั้น</p>
+			</div>
+		</div>
+		<div class="panel">
+			<h4>🔴 ลำดับออกงาน</h4>
+			<ol class="steps">
+				<li>เช็กว่างานครบ และถ้ากำลังพัก ให้กลับจากพักก่อนถ้าหน้าร้านกำหนด</li>
+				<li>ยืนในร้าน เช็ก GPS แล้วกด <strong>ออกงาน</strong> (แดง)</li>
+				<li>ถ้านอกวง ให้ถ่ายรูป → ยืนยันรูป → กดออกงาน → รออนุมัติเหมือนเข้างาน</li>
+				<li>เช็กบนจอว่ามีเวลาออกงานแล้วก่อนปิดแท็บ</li>
+			</ol>
+		</div>
+		<div class="panel red" style="margin-top: 0.85rem">
+			<h4>❌ ลืมกดออกงาน</h4>
+			<p>
+				อย่าปล่อยค้างสถานะกำลังทำงานข้ามวัน — แจ้งผู้จัดการ / แอดมินให้ช่วยปิดกะให้
+				พนักงานแก้เวลาเองในระบบไม่ได้
+			</p>
+		</div>
+	</section>
+
+	<section id="dont" class="section">
+		<div class="section-head">
+			<span class="num rose">7</span>
+			<div>
+				<h2>ข้อห้าม / แจ้งแอดมินเมื่อไหร่</h2>
+				<p>เรื่องที่พนักงานไม่ควรทำเอง</p>
+			</div>
+		</div>
+		<div class="alert">
+			<h4>🛑 กฎเหล็กลงเวลา</h4>
+			<div class="grid grid-3">
+				<div class="card soft-red">
+					<h3>ห้ามใช้บัญชีคนอื่น</h3>
+					<p>ล็อกอิน Google ของตัวเองเท่านั้น ห้ามให้เพื่อนกดแทน หรือกดให้เพื่อน</p>
+				</div>
+				<div class="card soft-red">
+					<h3>ห้ามโกง GPS</h3>
+					<p>อย่าใช้แอปปลอมตำแหน่ง อย่าส่งรูปเก่า / รูปจากแกลเลอรีแทนการถ่ายสด</p>
+				</div>
+				<div class="card soft-red">
+					<h3>ห้ามลงสาขาผิด</h3>
+					<p>มีแค่ Central / Samkong / Chalong — ไม่มี Devadiva และห้ามเลือกสาขาที่ตัวเองไม่ได้ทำงานวันนั้น</p>
+				</div>
+			</div>
+		</div>
+		<div class="dark-callout" style="margin-top: 0.9rem">
+			<h4>🚨 แจ้งผู้จัดการ / แอดมินเมื่อไหร่</h4>
+			<ul class="clean">
+				<li>ลืมกดออกงาน หรือกดผิดปุ่มจนเวลาเพี้ยน</li>
+				<li>สถานะ <strong>รออนุมัติ</strong> ค้างนานผิดปกติ</li>
+				<li>ล็อกอินผิดบัญชี / สาขาผิด / GPS พังทั้งกะ</li>
+			</ul>
+			<p style="margin-top: 0.6rem; margin-bottom: 0">
+				พนักงานไม่มีหน้าอนุมัติ แก้เวลา หรือดูรายชื่อใครอยู่ในระบบ — ส่งเรื่องให้ผู้จัดการจัดการให้
+			</p>
+		</div>
+	</section>
+
+	<section id="faq" class="section">
+		<div class="section-head">
+			<span class="num indigo">8</span>
+			<div>
+				<h2>คำถามพบบ่อย (FAQ)</h2>
+				<p>เคสที่เจอบ่อยตอนลงเวลา</p>
+			</div>
+		</div>
+		<div class="grid">
+			<details class="faq" open>
+				<summary><span style="color:var(--brand-600)">Q:</span> ลืมกดออกงานทำยังไง?</summary>
+				<div class="faq-body">
+					<p>
+						<strong>ตอบ:</strong> แจ้งผู้จัดการ / แอดมินทันที พร้อมบอกเวลาออกงานจริง —
+						พนักงานแก้เวลาเองไม่ได้
+					</p>
+				</div>
+			</details>
+			<details class="faq">
+				<summary><span style="color:var(--brand-600)">Q:</span> ขึ้นรออนุมัติค้างทั้งกะ?</summary>
+				<div class="faq-body">
+					<p>
+						รอผู้จัดการอนุมัติในระบบก่อน ถ้าค้างนานผิดปกติ ให้ทักผู้จัดการสาขา
+						อย่ากดคำขอซ้ำหลายรอบโดยไม่จำเป็น
+					</p>
+				</div>
+			</details>
+			<details class="faq">
+				<summary><span style="color:var(--brand-600)">Q:</span> GPS ไม่ติด / เบราว์เซอร์ไม่ถามตำแหน่ง?</summary>
+				<div class="faq-body">
+					<p>
+						เปิด Location ของมือถือ อนุญาตตำแหน่งให้เบราว์เซอร์ของ pos.billionail.com แล้วรีเฟรชหน้า
+						ถ้ายังไม่ติด ให้ลอง Chrome / Safari ล่าสุด หรือใช้เครื่องหน้าร้าน แล้วยังพังอยู่ให้แจ้งแอดมิน
+					</p>
+				</div>
+			</details>
+			<details class="faq hot">
+				<summary><span style="color:var(--brand-600)">Q:</span> ล็อกอินผิดบัญชี Google?</summary>
+				<div class="faq-body">
+					<p>
+						ออกจากระบบ แล้วล็อกอินใหม่ด้วยบัญชีของตัวเอง ห้ามลงเวลาด้วยบัญชีคนอื่น
+						ถ้าลงไปแล้วให้แจ้งผู้จัดการทันที
+					</p>
+				</div>
+			</details>
+			<details class="faq">
+				<summary><span style="color:var(--brand-600)">Q:</span> มีแอปลงเวลาแยกไหม?</summary>
+				<div class="faq-body">
+					<p>
+						ไม่มี — ใช้หน้าใน POS ที่
+						<code>https://pos.billionail.com/time-clock</code> หลังล็อกอิน Google เท่านั้น
+					</p>
+				</div>
+			</details>
+		</div>
+	</section>
+
+	<section class="missing">
+		<span class="pill" style="text-transform:none;letter-spacing:0">อัปเดต 26 ก.ย. 2026</span>
+		<h2 style="margin:0.4rem 0 0.35rem;font-size:1.15rem">รูปหน้าจอยังไม่มีในคู่มือนี้</h2>
+		<p class="lede">
+			ยังไม่มีแคปจอ time-clock ในรีโป — ใช้ลำดับขั้นตอนด้านบนกับจอจริงก่อน จะใส่รูปแผนที่ ปุ่มวงกลม
+			และสถานะรออนุมัติทีหลังเมื่อมีแคปจริง
+		</p>
+	</section>
+</GuideLayout>

@@ -4,7 +4,7 @@ import GuideLayout from '../layouts/GuideLayout.astro';
 
 <GuideLayout
 	title="คู่มือแคชเชียร์ BillioNail"
-	description="ศูนย์รวมคู่มือคิดเงินสำหรับแคชเชียร์ — สะสมแต้มและเครดิตสมาชิก"
+	description="ศูนย์รวมคู่มือคิดเงินสำหรับแคชเชียร์ — สะสมแต้ม เครดิตสมาชิก และลงเวลา"
 	heading="คู่มือแคชเชียร์ — เลือกหมวด"
 	current="home"
 >
@@ -18,7 +18,7 @@ import GuideLayout from '../layouts/GuideLayout.astro';
 		<span class="hero__mark" aria-hidden="true">💎</span>
 	</section>
 
-	<section class="grid grid-2">
+	<section class="grid grid-3">
 		<a class="card card-link" href="/crm/">
 			<div>
 				<div class="icon-box">1</div>
@@ -40,6 +40,17 @@ import GuideLayout from '../layouts/GuideLayout.astro';
 			</div>
 			<div class="card-foot amber">เปิดคู่มือเครดิต →</div>
 		</a>
+		<a class="card card-link emerald" href="/timeclock/">
+			<div>
+				<div class="icon-box emerald">3</div>
+				<h3>ลงเวลา</h3>
+				<p>
+					เข้างาน ออกงาน พักเที่ยง ผ่าน POS ที่
+					<code>pos.billionail.com/time-clock</code> — GPS ในร้าน หรือถ่ายรูปรออนุมัติ
+				</p>
+			</div>
+			<div class="card-foot emerald">เปิดคู่มือลงเวลา →</div>
+		</a>
 	</section>
 
 	<section class="section">
@@ -47,7 +58,7 @@ import GuideLayout from '../layouts/GuideLayout.astro';
 			<span class="num">📌</span>
 			<div>
 				<h2>อ่านอะไรก่อน</h2>
-				<p>สามข้อนี้จำไว้ แล้วค่อยเปิดหมวดที่ตรงงาน</p>
+				<p>ข้อนี้จำไว้ แล้วค่อยเปิดหมวดที่ตรงงาน</p>
 			</div>
 		</div>
 		<ol class="steps">
@@ -60,6 +71,10 @@ import GuideLayout from '../layouts/GuideLayout.astro';
 				แล้วบวก 5% ถ้าใช้เครดิตแม้แต่บาทเดียว
 			</li>
 			<li><strong>อย่าสลับสองปุ่มนี้</strong> — แลกแต้ม ≠ ใช้ Credit / แพ็กเกจ</li>
+			<li>
+				<strong>ลงเวลาเข้า–ออกงาน</strong> — เปิด <a href="/timeclock/">ลงเวลา</a> ผ่าน POS อนุญาต GPS
+				กดในร้าน
+			</li>
 		</ol>
 	</section>
 
@@ -71,7 +86,7 @@ import GuideLayout from '../layouts/GuideLayout.astro';
 				<p>ยังไม่มีหน้าเต็ม — จะใส่เมื่อมี SOP ล็อกแล้ว</p>
 			</div>
 		</div>
-		<div class="grid grid-3">
+		<div class="grid grid-2">
 			<div class="card soft-slate">
 				<h3>จุดขาย</h3>
 				<p>จะอยู่ที่ <code>/pos/</code> — เปิดกะ คิดเงินทั่วไป จอ POS</p>
@@ -79,10 +94,6 @@ import GuideLayout from '../layouts/GuideLayout.astro';
 			<div class="card soft-slate">
 				<h3>รายงาน</h3>
 				<p>จะอยู่ที่ <code>/reports/</code> — ปิดร้าน ยอดวัน ยอดเครดิต</p>
-			</div>
-			<div class="card soft-slate">
-				<h3>ลงเวลา</h3>
-				<p>จะอยู่ที่ <code>/timeclock/</code> — เข้างาน ออกงาน</p>
 			</div>
 		</div>
 	</section>

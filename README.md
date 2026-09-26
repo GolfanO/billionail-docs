@@ -9,6 +9,7 @@
 | หน้าแรก (อ่านอะไรก่อน) | https://docs.billionail.com/ |
 | สะสมแต้ม (CRM) | https://docs.billionail.com/crm/ |
 | เครดิตสมาชิก | https://docs.billionail.com/credit/ |
+| ลงเวลา | https://docs.billionail.com/timeclock/ |
 
 เดพลอยด้วย GitHub Actions → GitHub Pages ทุกครั้งที่ push `main` (Vercel ลิงก์รีโปนี้ไม่ได้เพราะ GitHub App)
 
@@ -33,7 +34,7 @@ pnpm build
 
 ไฟล์พร้อมเสิร์ฟอยู่ที่ `dist/` ดูตัวอย่างโลคอลด้วย `pnpm preview`
 
-## เพิ่มหมวดใหม่ (เช่น จุดขาย / รายงาน / ลงเวลา)
+## เพิ่มหมวดใหม่ (เช่น จุดขาย / รายงาน)
 
 ไม่ต้องแตะ DNS แค่เพิ่มหน้าแล้วบิลด์ใหม่
 

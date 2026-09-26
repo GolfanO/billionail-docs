@@ -12,7 +12,7 @@ interface Props {
 	description: string;
 	heading: string;
 	updated?: string;
-	current: 'home' | 'crm' | 'credit';
+	current: 'home' | 'crm' | 'credit' | 'timeclock';
 	tabs?: Tab[];
 }
 
@@ -20,7 +20,7 @@ const {
 	title,
 	description,
 	heading,
-	updated = 'อัปเดต 20 ก.ย. 2026',
+	updated = 'อัปเดต 26 ก.ย. 2026',
 	current,
 	tabs = [],
 } = Astro.props;
@@ -29,6 +29,7 @@ const hub = [
 	{ href: '/', id: 'home', label: 'หน้าแรก' },
 	{ href: '/crm/', id: 'crm', label: 'สะสมแต้ม' },
 	{ href: '/credit/', id: 'credit', label: 'เครดิตสมาชิก' },
+	{ href: '/timeclock/', id: 'timeclock', label: 'ลงเวลา' },
 ] as const;
 ---
 
@@ -96,7 +97,7 @@ const hub = [
 
 		<footer class="site-footer">
 			<p>คู่มือแคชเชียร์ BillioNail — สำหรับพนักงานแคชเชียร์และฝ่ายต้อนรับหน้าร้าน</p>
-			<p>docs.billionail.com · ระบบ CRM & POS อัปเดตล่าสุด: 20 กันยายน 2026</p>
+			<p>docs.billionail.com · ระบบ CRM & POS อัปเดตล่าสุด: 26 กันยายน 2026</p>
 		</footer>
 
 		<div id="lightbox" class="lightbox">

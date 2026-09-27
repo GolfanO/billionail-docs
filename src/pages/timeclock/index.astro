@@ -25,9 +25,14 @@ const tabs = [
 		<span class="hero__badge">✨ อ่านจบใน 3 นาที พร้อมกดลงเวลาได้ทันที</span>
 		<h2>คู่มือลงเวลาทำงาน (Time Clock)</h2>
 		<p>
-			<strong>ช่องทางลงเวลา:</strong> เข้าผ่านระบบ POS เท่านั้น โดยล็อกอินด้วยบัญชี Google ของตัวเอง
-			แล้วไปที่เมนู <strong>"ลงเวลา"</strong> หรือเข้าลิงก์
+			<strong>หน้าแรกพนักงาน:</strong> เปิดได้ที่
+			<code>https://staff.billionail.com/</code>
+			(ระบบเดียวกับ POS แค่คนละโดเมน)
+			<br />
+			<strong>ลงเวลา:</strong> ต้องใช้
 			<code>https://pos.billionail.com/time-clock</code>
+			เท่านั้น — ล็อกอินด้วยบัญชี Google ของตัวเอง แล้วกดเมนู <strong>"ลงเวลา"</strong>
+			หรือเข้าลิงก์นี้โดยตรง
 			<br />
 			<em>(สาขาที่เปิดให้ลงเวลา: Central / Samkong / Chalong)</em>
 		</p>
@@ -38,13 +43,16 @@ const tabs = [
 		<div class="card">
 			<div>
 				<div class="icon-box">1</div>
-				<h3>เข้าผ่าน POS เท่านั้น</h3>
+				<h3>จำโดเมนให้ถูก</h3>
 				<p>
-					ล็อกอินบัญชี Google ของตัวเองในระบบ POS แล้วเปิดหน้าลงเวลา
-					<strong>(ไม่มีแอปลงเวลาแยก)</strong>
+					<strong>หน้าแรกพนักงาน</strong> =
+					<code>staff.billionail.com</code>
+					· <strong>ลงเวลา</strong> =
+					<code>pos.billionail.com/time-clock</code>
+					เท่านั้น — ไม่มีแอปใน App Store / Play Store
 				</p>
 			</div>
-			<div class="card-foot">📱 ไม่มีแอป / โดเมน staff แยก</div>
+			<div class="card-foot">📱 หน้าแรก staff · ลงเวลาที่ pos</div>
 		</div>
 		<div class="card amber">
 			<div>
@@ -98,6 +106,10 @@ const tabs = [
 						<strong>Central / Samkong / Chalong</strong>
 					</li>
 				</ol>
+				<p style="margin-top: 0.75rem; margin-bottom: 0">
+					💡 ถ้าอยู่ที่ <code>staff.billionail.com</code> อยู่แล้ว ให้กดเมนู/ลิงก์
+					<strong>ลงเวลา</strong> — ระบบจะพาไปหน้าลงเวลาที่ pos ให้เอง
+				</p>
 			</div>
 			<div class="panel sky">
 				<h4>🖥️ หน้าจอจะแสดงข้อมูลดังนี้</h4>
@@ -419,8 +431,12 @@ const tabs = [
 				</summary>
 				<div class="faq-body">
 					<p>
-						ไม่มี ใช้เว็บ POS ที่
-						<code>https://pos.billionail.com/time-clock</code> โดยตรง
+						ไม่มีแอปในสโตร์ — ใช้เว็บอย่างเดียว
+						<strong>หน้าแรกพนักงาน</strong> ที่
+						<code>https://staff.billionail.com/</code>
+						และ <strong>ลงเวลา</strong> ที่
+						<code>https://pos.billionail.com/time-clock</code>
+						เท่านั้น
 					</p>
 				</div>
 			</details>
@@ -428,7 +444,7 @@ const tabs = [
 	</section>
 
 	<section class="missing">
-		<span class="pill" style="text-transform:none;letter-spacing:0">แคปจอ StaffClock อัปเดต 26 ก.ย. 2026</span>
+		<span class="pill" style="text-transform:none;letter-spacing:0">แคปจอ StaffClock อัปเดต 27 ก.ย. 2026</span>
 		<h2 style="margin:0.4rem 0 0.35rem;font-size:1.15rem">รูปภาพรวมจอลงเวลาใส่ในหัวข้อ 1 แล้ว</h2>
 		<p class="lede">
 			แคปจอภาพรวมจริง (มือถือ · สาขา Central · GPS นอกรัศมี) อยู่ในส่วน <strong>เปิดหน้าจอลงเวลา</strong> ด้านบนแล้ว — กดรูปเพื่อขยาย

@@ -9,6 +9,7 @@
 | หน้าแรก (อ่านอะไรก่อน) | https://docs.billionail.com/ |
 | สะสมแต้ม (CRM) | https://docs.billionail.com/crm/ |
 | เครดิตสมาชิก | https://docs.billionail.com/credit/ |
+| รับเงิน QR (QR พร้อมยอด + ตรวจสลิป) | https://docs.billionail.com/qr/ |
 | ลงเวลา | https://docs.billionail.com/timeclock/ |
 
 เดพลอยด้วย GitHub Actions → GitHub Pages ทุกครั้งที่ push `main` (Vercel ลิงก์รีโปนี้ไม่ได้เพราะ GitHub App)

@@ -4,9 +4,9 @@ import GuideLayout from '../layouts/GuideLayout.astro';
 
 <GuideLayout
 	title="คู่มือแคชเชียร์ BillioNail"
-	description="ศูนย์รวมคู่มือคิดเงินสำหรับแคชเชียร์ — สะสมแต้ม เครดิตสมาชิก และลงเวลา"
+	description="ศูนย์รวมคู่มือคิดเงินสำหรับแคชเชียร์ — สะสมแต้ม เครดิตสมาชิก รับเงิน QR และลงเวลา"
 	heading="คู่มือแคชเชียร์ — เลือกหมวด"
-	updated="อัปเดต 7 ต.ค. 2026"
+	updated="อัปเดต 18 ต.ค. 2026"
 	current="home"
 >
 	<section class="hero hub-hero">
@@ -19,7 +19,7 @@ import GuideLayout from '../layouts/GuideLayout.astro';
 		<span class="hero__mark" aria-hidden="true">💎</span>
 	</section>
 
-	<section class="grid grid-3">
+	<section class="grid grid-2">
 		<a class="card card-link" href="/crm/">
 			<div>
 				<div class="icon-box">1</div>
@@ -41,9 +41,20 @@ import GuideLayout from '../layouts/GuideLayout.astro';
 			</div>
 			<div class="card-foot amber">เปิดคู่มือเครดิต →</div>
 		</a>
+		<a class="card card-link sky" href="/qr/">
+			<div>
+				<div class="icon-box">3</div>
+				<h3>รับเงิน QR ✨ ใหม่</h3>
+				<p>
+					จอขึ้น QR พร้อมยอดบิลให้ลูกค้าสแกน แล้วตรวจสลิปกับธนาคารก่อนบันทึกการขาย · ตรวจไม่ผ่านทำยังไง ·
+					ยืนยันเองพร้อมเหตุผล
+				</p>
+			</div>
+			<div class="card-foot">เปิดคู่มือรับเงิน QR →</div>
+		</a>
 		<a class="card card-link emerald" href="/timeclock/">
 			<div>
-				<div class="icon-box emerald">3</div>
+				<div class="icon-box emerald">4</div>
 				<h3>ลงเวลา</h3>
 				<p>
 					หน้าแรกพนักงานที่ <code>staff.billionail.com</code> · ลงเวลาเข้า–ออกงานที่
@@ -73,6 +84,10 @@ import GuideLayout from '../layouts/GuideLayout.astro';
 				ใช้ Credit / แพ็กเกจ ได้ส่วนลดเครดิต 5% ถ้าเดือนเกิดได้ 10% แทน
 			</li>
 			<li><strong>อย่าสลับสองปุ่มนี้</strong> — แลกแต้ม ≠ ใช้ Credit / แพ็กเกจ</li>
+			<li>
+				<strong>ลูกค้าจ่ายด้วย QR</strong> — เปิด <a href="/qr/">รับเงิน QR</a> ให้ลูกค้าสแกน QR บนจอ แล้ว
+				<strong>ตรวจสลิปทุกบิล</strong> ก่อนบันทึกการขาย
+			</li>
 			<li>
 				<strong>ลงเวลาเข้า–ออกงาน</strong> — เปิด <a href="/timeclock/">ลงเวลา</a> ที่
 				<code>pos.billionail.com/time-clock</code> (หน้าแรกพนักงานอยู่ที่

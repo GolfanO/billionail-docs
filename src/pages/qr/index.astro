@@ -1,0 +1,388 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const tabs = [
+	{ href: '#overview', label: 'ภาพรวม' },
+	{ href: '#steps', label: '1. ขั้นตอนรับเงิน' },
+	{ href: '#results', label: '2. ผลตรวจสลิป' },
+	{ href: '#manual', label: '3. ยืนยันเอง' },
+	{ href: '#cases', label: '4. กรณีพิเศษ', accent: 'amber' as const },
+	{ href: '#dont', label: '5. ห้ามทำ' },
+	{ href: '#admin', label: '6. แอดมิน' },
+];
+---
+
+<GuideLayout
+	title="คู่มือแคชเชียร์ BillioNail — รับเงิน QR"
+	description="คู่มือแคชเชียร์รับเงินด้วย QR — QR พร้อมยอดบนจอ ตรวจสลิปกับธนาคารก่อนบันทึกการขาย และวิธีทำเมื่อตรวจไม่ผ่าน"
+	heading="คู่มือแคชเชียร์ — รับเงิน QR"
+	updated="อัปเดต 18 ต.ค. 2026"
+	current="qr"
+	tabs={tabs}
+>
+	<section class="hero">
+		<span class="hero__badge">ใช้ทุกสาขา ตั้งแต่ 18 ต.ค. 2026</span>
+		<h2>รับเงิน QR แบบใหม่</h2>
+		<p>
+			กดปุ่ม <strong>QR Code</strong> หรือ <strong>QR Code บริษัท</strong> แล้วกด <strong>ชำระเงิน</strong> →
+			จอขึ้น <strong>QR พร้อมยอดบิล</strong> ให้ลูกค้าสแกน → ลูกค้าโอนเสร็จ ให้
+			<strong>ตรวจสลิปกับธนาคาร</strong> ก่อนบันทึกการขาย<br />
+			<strong>ไม่ต้องถ่ายรูปสลิปเก็บแล้ว</strong> ระบบจำผลตรวจไว้ในบิลให้เอง
+		</p>
+		<span class="hero__mark" aria-hidden="true">📲</span>
+	</section>
+
+	<section id="overview" class="grid grid-3">
+		<div class="card">
+			<div>
+				<div class="icon-box">1</div>
+				<h3>QR มียอดในตัว</h3>
+				<p>ลูกค้าสแกนแล้วยอดขึ้นในแอปธนาคารเอง ไม่ต้องพิมพ์ยอด ลดโอนขาด โอนเกิน</p>
+			</div>
+			<div class="card-foot">เงินเข้าบัญชีร้านเดิมทุกอย่าง</div>
+		</div>
+		<div class="card amber">
+			<div>
+				<div class="icon-box amber">2</div>
+				<h3>ตรวจสลิปทุกบิล</h3>
+				<p>สแกน QR เล็กบนสลิปในมือถือลูกค้า ระบบเช็กกับธนาคารว่าเงินเข้าจริง ยอดตรง และไม่ใช่สลิปเก่า</p>
+			</div>
+			<div class="card-foot amber">1 สลิป ใช้ได้ 1 บิล</div>
+		</div>
+		<div class="card emerald">
+			<div>
+				<div class="icon-box emerald">3</div>
+				<h3>ตรวจไม่ผ่าน มีทางไปต่อ</h3>
+				<p>จอบอกเหตุผลเป็นภาษาไทย ตรวจใหม่ได้ หรือกดยืนยันเองพร้อมใส่เหตุผล</p>
+			</div>
+			<div class="card-foot emerald">เหตุผลติดอยู่ในบิล</div>
+		</div>
+	</section>
+
+	<section id="steps" class="section">
+		<div class="section-head">
+			<span class="num">1</span>
+			<div>
+				<h2>ขั้นตอนรับเงิน QR</h2>
+				<p>ทำแบบนี้ทุกบิลที่ลูกค้าจ่ายด้วย QR</p>
+			</div>
+		</div>
+		<div class="grid grid-2">
+			<div class="panel">
+				<h4>📱 ลำดับรับเงิน</h4>
+				<ol class="steps">
+					<li>ใส่บริการ เลือกช่าง ใส่เบอร์ลูกค้า ตามปกติ</li>
+					<li>เลือกปุ่ม <strong>QR Code</strong> หรือ <strong>QR Code บริษัท</strong> ตามที่ร้านใช้อยู่เดิม แล้วกด <strong>ชำระเงิน</strong></li>
+					<li>
+						<strong>สาขาเซ็นทรัล:</strong> ปุ่ม QR Code มี 2 บัญชี (<strong>แม่มณี</strong> และ <strong>K+</strong>)
+						ต้อง<strong>เลือกบัญชีทุกบิล</strong> ก่อนเลือก ปุ่มสแกนสลิปจะกดไม่ได้
+					</li>
+					<li>หันจอให้ลูกค้าสแกน <strong>QR ที่ขึ้นบนจอ</strong> ยอดจะขึ้นในแอปให้เอง</li>
+					<li>ลูกค้าโอนเสร็จ กด <strong>สแกน QR บนสลิป</strong> แล้วส่องกล้องที่ <strong>QR เล็กบนสลิป</strong> ในมือถือลูกค้า</li>
+					<li>ขึ้น <strong>สลิปถูกต้อง ยอดตรง</strong> → ดูชื่อบัญชีผู้รับว่าเป็นบัญชีร้าน → กด <strong>บันทึกการขาย</strong></li>
+				</ol>
+			</div>
+			<div class="panel emerald">
+				<h4>💡 จำสั้นๆ</h4>
+				<ul class="clean">
+					<li>QR ใหญ่บนจอ = <strong>ให้ลูกค้าสแกนจ่าย</strong></li>
+					<li>QR เล็กบนสลิป = <strong>ให้เราสแกนตรวจ</strong></li>
+					<li>สแกนไม่ติด หรือลูกค้าส่งสลิปมาทาง LINE → กด <strong>ถ่ายหรือเลือกรูปสลิป</strong></li>
+					<li>ครั้งแรกเบราว์เซอร์จะถามขอใช้กล้อง → กด <strong>อนุญาต</strong></li>
+					<li>กด × ปิดหน้าต่าง = ยังไม่บันทึก บิลยังอยู่ในจอ</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="grid grid-2" style="margin-top: 0.85rem">
+			<figure class="shot">
+				<button
+					type="button"
+					data-lightbox
+					data-src="/images/qr/screen-1-pick.png"
+					data-title="สาขาที่มี 2 บัญชี — เลือกบัญชีก่อน ปุ่มสแกนสลิปจึงจะกดได้"
+				>
+					<img
+						src="/images/qr/screen-1-pick.png"
+						width="716"
+						height="1092"
+						alt="หน้าต่างตรวจสลิป มีปุ่มเลือกบัญชี K+ และแม่มณี ปุ่มสแกนสลิปยังจางอยู่"
+					/>
+				</button>
+				<figcaption>สเต็ป 3: สาขาที่มี 2 บัญชี — เลือกบัญชีก่อน ปุ่มสแกนสลิปยังจางอยู่</figcaption>
+			</figure>
+			<figure class="shot">
+				<button
+					type="button"
+					data-lightbox
+					data-src="/images/qr/screen-2-show.png"
+					data-title="QR พร้อมยอดบิล — หันจอให้ลูกค้าสแกน (QR ในรูปนี้เบลอไว้)"
+				>
+					<img
+						src="/images/qr/screen-2-show.png"
+						width="716"
+						height="1556"
+						alt="หน้าต่างตรวจสลิปแสดง QR พร้อมยอด 350 บาท และปุ่มสแกน QR บนสลิป"
+					/>
+				</button>
+				<figcaption>สเต็ป 4–5: QR พร้อมยอด (ในรูปนี้เบลอไว้) ลูกค้าโอนแล้วกด สแกน QR บนสลิป</figcaption>
+			</figure>
+		</div>
+	</section>
+
+	<section id="results" class="section">
+		<div class="section-head">
+			<span class="num emerald">2</span>
+			<div>
+				<h2>ผลตรวจสลิป</h2>
+				<p>ผ่าน = บันทึกการขาย · ไม่ผ่าน = ทำตามตาราง</p>
+			</div>
+		</div>
+
+		<div class="grid grid-2">
+			<figure class="shot">
+				<button
+					type="button"
+					data-lightbox
+					data-src="/images/qr/screen-3-passed.png"
+					data-title="ตรวจผ่าน — ดูยอด เวลาโอน และชื่อบัญชีผู้รับ แล้วกดบันทึกการขาย"
+				>
+					<img
+						src="/images/qr/screen-3-passed.png"
+						width="716"
+						height="1032"
+						alt="สลิปถูกต้อง ยอดตรง แสดงยอดในสลิป เวลาโอน บัญชีผู้รับ เลขอ้างอิง และปุ่มบันทึกการขาย"
+					/>
+				</button>
+				<figcaption>ผ่าน: ดูชื่อบัญชีผู้รับว่าเป็นของร้าน แล้วกด บันทึกการขาย</figcaption>
+			</figure>
+			<figure class="shot">
+				<button
+					type="button"
+					data-lightbox
+					data-src="/images/qr/screen-4-failed.png"
+					data-title="ตรวจไม่ผ่าน — จอบอกเหตุผล และยอดในสลิปถ้ายอดไม่ตรง"
+				>
+					<img
+						src="/images/qr/screen-4-failed.png"
+						width="716"
+						height="624"
+						alt="ตรวจไม่ผ่าน ยอดในสลิปไม่ตรงกับยอดที่ต้องจ่าย ยอดในสลิป 300 บาท ปุ่มตรวจใหม่และยืนยันเอง"
+					/>
+				</button>
+				<figcaption>ไม่ผ่าน: อ่านเหตุผล แล้วทำตามตารางด้านล่าง</figcaption>
+			</figure>
+		</div>
+
+		<div class="panel" style="margin-top: 0.85rem">
+			<h4>🧾 ข้อความที่อาจเจอ และต้องทำอะไร</h4>
+			<ul class="clean">
+				<li>
+					<strong>ยอดในสลิปไม่ตรงกับยอดที่ต้องจ่าย</strong> — จอบอกยอดในสลิปให้ด้วย ถ้าลูกค้าโอนขาด ให้โอนส่วนที่ขาดเพิ่ม
+					แล้วกด <strong>ยืนยันเอง</strong> เลือก "ลูกค้าโอนแยกหลายรายการ" · ถ้าโอนเกิน หรือเป็นสลิปของบิลอื่น แจ้งเจ้าของร้าน
+				</li>
+				<li>
+					<strong>สลิปนี้เคยใช้ไปแล้ว</strong> — สลิปนี้ปิดบิลอื่นไปแล้ว <strong>ห้ามรับ</strong> ขอให้ลูกค้าเปิดสลิปของรายการนี้
+					ถ้าไม่มี แจ้งเจ้าของร้าน
+				</li>
+				<li>
+					<strong>ไม่พบรายการนี้ในระบบธนาคาร</strong> — บางครั้งธนาคารยังไม่อัปเดต รอ 1–2 นาที แล้วกด
+					<strong>ตรวจใหม่</strong> ถ้ายังไม่พบ <strong>ห้ามรับ</strong> แจ้งเจ้าของร้าน
+				</li>
+				<li><strong>สลิปไม่ถูกต้องหรือเป็นสลิปปลอม</strong> — <strong>ห้ามรับ</strong> แจ้งเจ้าของร้านทันที</li>
+				<li>
+					<strong>สลิปนี้โอนเข้าบัญชีอื่น ไม่ใช่บัญชีร้าน</strong> — <strong>ห้ามรับ</strong> ให้ลูกค้าดูว่าโอนเข้าบัญชีไหน
+					แล้วแจ้งเจ้าของร้าน
+				</li>
+				<li>
+					<strong>สลิปนี้โอนเข้า "…" ซึ่งเป็นบัญชีของปุ่มชำระเงินอื่น</strong> — เงินเข้าร้านแล้ว แต่กดปุ่มผิด ปิดหน้าต่าง
+					เปลี่ยนเป็นปุ่ม QR ที่ตรงกับบัญชีนั้น แล้วตรวจใหม่
+				</li>
+				<li><strong>สลิปเก่าเกิน 24 ชั่วโมง</strong> — <strong>ห้ามรับ</strong> แจ้งเจ้าของร้าน</li>
+				<li>
+					<strong>นี่คือ QR รับเงินของร้าน</strong> — เราสแกน QR ใหญ่ของร้านแทน ให้สแกน <strong>QR เล็กบนสลิป</strong>ของลูกค้า
+				</li>
+				<li>
+					<strong>อ่าน QR หรือรูปสลิปไม่ได้</strong> — ลองใหม่ ขอให้ลูกค้าเพิ่มความสว่างจอ หรือใช้
+					<strong>ถ่ายหรือเลือกรูปสลิป</strong>
+				</li>
+				<li>
+					<strong>ธนาคารตอบช้า / ระบบตรวจสลิปไม่ตอบ</strong> — กด <strong>ตรวจใหม่</strong> ถ้ายังไม่ได้ ให้
+					<strong>ยืนยันเอง</strong> เหตุผล "ระบบตรวจสลิปไม่ตอบ"
+				</li>
+				<li>
+					<strong>โควต้าตรวจสลิปหมด / ระบบตรวจสลิปยังตั้งค่าไม่ครบ</strong> — แจ้งเจ้าของร้าน แล้วกด
+					<strong>ยืนยันเอง</strong> พร้อมเหตุผลไปก่อน
+				</li>
+			</ul>
+		</div>
+
+		<div class="panel sky" style="margin-top: 0.85rem">
+			<h4>⚡ บางบัญชีบันทึกการขายให้เอง</h4>
+			<p>
+				เมื่อร้านเปิด "ตรวจบัญชีผู้รับ" ของ QR ไหนแล้ว ถ้าสลิปผ่านและเงินเข้าบัญชีนั้นจริง จอจะขึ้น
+				<strong>เงินเข้าบัญชีร้านถูกต้อง</strong> และ<strong>บันทึกการขายให้เองใน 2 วินาที</strong> ไม่ต้องกด
+				(กด <strong>บันทึกการขาย</strong> เพื่อบันทึกทันทีได้)
+			</p>
+		</div>
+	</section>
+
+	<section id="manual" class="section">
+		<div class="section-head">
+			<span class="num amber">3</span>
+			<div>
+				<h2>ยืนยันเอง (ใส่เหตุผล)</h2>
+				<p>ใช้เมื่อตรวจกับระบบไม่ได้ แต่แน่ใจว่าเงินเข้าบัญชีร้านจริง</p>
+			</div>
+		</div>
+		<div class="grid grid-2">
+			<div class="panel amber">
+				<h4>🛠️ วิธีกด</h4>
+				<ol class="steps">
+					<li>กด <strong>ยืนยันเอง (ใส่เหตุผล)</strong> หรือ <strong>ยืนยันเอง</strong> หลังตรวจไม่ผ่าน</li>
+					<li>
+						เลือกเหตุผลสำเร็จรูป หรือพิมพ์เอง: ระบบตรวจสลิปไม่ตอบ · QR บนสลิปอ่านไม่ได้ · ลูกค้าโอนแยกหลายรายการ ·
+						เช็กยอดเข้าบัญชีร้านแล้ว
+					</li>
+					<li>กด <strong>ยืนยันเองและบันทึกการขาย</strong></li>
+				</ol>
+				<p class="note">
+					เหตุผลจะติดอยู่ในหมายเหตุของบิลเป็น <code>[QR ยืนยันเอง] …</code> และระบบเก็บชื่อคนกดไว้ เจ้าของร้านตรวจย้อนหลังได้
+				</p>
+			</div>
+			<figure class="shot">
+				<button
+					type="button"
+					data-lightbox
+					data-src="/images/qr/screen-5-manual.png"
+					data-title="ยืนยันเอง — เลือกเหตุผล แล้วกดยืนยันเองและบันทึกการขาย"
+				>
+					<img
+						src="/images/qr/screen-5-manual.png"
+						width="716"
+						height="1044"
+						alt="หน้ายืนยันเอง มีปุ่มเหตุผลสำเร็จรูป ช่องเหตุผล ปุ่มกลับ และปุ่มยืนยันเองและบันทึกการขาย"
+					/>
+				</button>
+				<figcaption>เลือกเหตุผล แล้วกด ยืนยันเองและบันทึกการขาย</figcaption>
+			</figure>
+		</div>
+		<div class="panel slate" style="margin-top: 0.85rem">
+			<h4>ปุ่ม "ข้าม ไม่ตรวจสลิป"</h4>
+			<p>
+				ช่วงที่ทุกคนกำลังฝึกใช้ ยังกดข้ามได้ แต่<strong>ขอให้ตรวจสลิปทุกบิล</strong> ร้านจะปิดปุ่มนี้เมื่อทุกคนคล่องแล้ว
+				หลังจากนั้นบิล QR ทุกใบต้องตรวจผ่าน หรือยืนยันเองพร้อมเหตุผล
+			</p>
+		</div>
+	</section>
+
+	<section id="cases" class="section">
+		<div class="section-head">
+			<span class="num indigo">4</span>
+			<div>
+				<h2>กรณีพิเศษ</h2>
+				<p>เรื่องที่เจอบ่อยหน้าเคาน์เตอร์</p>
+			</div>
+		</div>
+		<div class="grid">
+			<details class="faq" open>
+				<summary><span style="color:var(--brand-600)">Q:</span> ลูกค้าสแกน QR ที่ตั้งหน้าเคาน์เตอร์ไปแล้ว ทำยังไง?</summary>
+				<div class="faq-body">
+					<p>
+						ตรวจสลิปตามปกติได้เลย · ที่เซ็นทรัล ให้<strong>เลือกบัญชีให้ตรงกับ QR ที่ลูกค้าสแกน</strong>ก่อน แล้วค่อยสแกนสลิป
+					</p>
+				</div>
+			</details>
+			<details class="faq">
+				<summary><span style="color:var(--brand-600)">Q:</span> จ่าย Credit / แพ็กเกจ แล้วจ่ายส่วนที่เหลือด้วย QR?</summary>
+				<div class="faq-body">
+					<p>หน้าต่างตรวจสลิปจะขึ้นเฉพาะ<strong>ยอดส่วนที่จ่ายด้วย QR</strong> QR บนจอก็เป็นยอดนั้น</p>
+				</div>
+			</details>
+			<details class="faq">
+				<summary><span style="color:var(--brand-600)">Q:</span> ตรวจสลิปผ่านแล้ว แต่ลูกค้าขอเพิ่ม/ลดบริการ?</summary>
+				<div class="faq-body">
+					<p>
+						ยอดบิลเปลี่ยน ผลตรวจเดิมใช้ไม่ได้ ต้องกดชำระเงินแล้วตรวจใหม่ · ถ้าลูกค้าต้องโอนเพิ่ม จะมีสลิป 2 ใบ
+						ที่ยอดไม่ตรงบิลทั้งคู่ ให้กด <strong>ยืนยันเอง</strong> เหตุผล "ลูกค้าโอนแยกหลายรายการ"
+					</p>
+				</div>
+			</details>
+			<details class="faq">
+				<summary><span style="color:var(--brand-600)">Q:</span> ตรวจผ่านแล้วแต่ยังไม่ได้กดบันทึก ปิดหน้าต่างไป ต้องตรวจใหม่ไหม?</summary>
+				<div class="faq-body">
+					<p>
+						กดชำระเงินใหม่ แล้วสแกนสลิปเดิมได้เลย ระบบจำได้ว่าเป็นบิลเดิม จะขึ้นผ่านอีกครั้ง
+						(ผลตรวจใช้ได้ภายใน 1 ชั่วโมง)
+					</p>
+				</div>
+			</details>
+			<details class="faq">
+				<summary><span style="color:var(--brand-600)">Q:</span> กล้องไม่เปิด?</summary>
+				<div class="faq-body">
+					<p>
+						อนุญาตกล้องในเบราว์เซอร์ หรือใช้ปุ่ม <strong>ถ่ายหรือเลือกรูปสลิป</strong> แทน (ถ่ายรูปจอมือถือลูกค้า
+						หรือเลือกรูปสลิปที่ลูกค้าส่งมาทาง LINE)
+					</p>
+				</div>
+			</details>
+			<details class="faq">
+				<summary><span style="color:var(--brand-600)">Q:</span> ไม่มี QR ขึ้นบนจอ?</summary>
+				<div class="faq-body">
+					<p>
+						ปุ่มนั้นของสาขานั้นยังไม่ได้ตั้ง QR ไว้ ให้ลูกค้าสแกน QR หน้าเคาน์เตอร์แบบเดิม แล้วตรวจสลิปตามปกติ แจ้งแอดมิน
+					</p>
+				</div>
+			</details>
+		</div>
+	</section>
+
+	<section id="dont" class="section">
+		<div class="section-head">
+			<span class="num rose">5</span>
+			<div>
+				<h2>ห้ามทำ</h2>
+				<p>กันเงินหาย กันสลิปปลอม</p>
+			</div>
+		</div>
+		<div class="alert">
+			<h4>🛑 กฎเหล็กรับเงิน QR</h4>
+			<div class="grid grid-3">
+				<div class="card soft-red">
+					<h3>ห้ามรับสลิปที่ไม่ผ่าน</h3>
+					<p>สลิปปลอม สลิปซ้ำ สลิปเก่า โอนเข้าบัญชีอื่น — ห้ามกดยืนยันเองเพื่อให้ผ่าน</p>
+				</div>
+				<div class="card soft-red">
+					<h3>ห้ามยืนยันเองโดยไม่เช็ก</h3>
+					<p>ยืนยันเองได้เฉพาะเมื่อแน่ใจว่าเงินเข้าบัญชีร้านจริง เหตุผลและชื่อคนกดติดอยู่ในบิล</p>
+				</div>
+				<div class="card soft-red">
+					<h3>1 สลิป = 1 บิล</h3>
+					<p>ห้ามใช้สลิปเดียวปิดหลายบิล ระบบจะไม่ยอมอยู่แล้ว</p>
+				</div>
+			</div>
+			<ul class="clean" style="margin-top: 0.8rem">
+				<li>อย่าดูแค่ว่าลูกค้า "โอนแล้ว" ต้องตรวจสลิปในระบบก่อนบันทึกการขาย</li>
+				<li>อย่าบอกลูกค้าว่าให้ถ่ายรูปสลิปส่งทีหลัง ตรวจที่เคาน์เตอร์ให้จบในบิล</li>
+			</ul>
+		</div>
+	</section>
+
+	<section id="admin" class="section">
+		<div class="section-head">
+			<span class="num">6</span>
+			<div>
+				<h2>สำหรับเจ้าของร้าน / แอดมิน</h2>
+				<p>แคชเชียร์ไม่ต้องตั้งค่าเอง</p>
+			</div>
+		</div>
+		<div class="dark-callout">
+			<h4>⚙️ ตั้งค่าอยู่ที่ไหน</h4>
+			<p>
+				<strong>ตั้งค่า → QR รับเงิน</strong> (เฉพาะ admin) — อัปโหลดรูป QR ของร้านแยกสาขาและปุ่ม กด
+				<strong>ทดสอบ ฿1</strong> สแกนเช็กก่อนใช้จริง · หลังมีสลิปจริงเข้าแล้ว กด <strong>ใช้ค่านี้</strong> และเปิด
+				<strong>ตรวจบัญชีผู้รับ</strong> ทีละ QR · ถ้ามีปัญหา ปิดสวิตช์ <strong>ใช้งาน</strong> ของ QR นั้น ปุ่มนั้นจะกลับไปแบบเดิม
+			</p>
+		</div>
+	</section>
+</GuideLayout>

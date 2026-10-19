@@ -12,7 +12,7 @@ interface Props {
 	description: string;
 	heading: string;
 	updated?: string;
-	current: 'home' | 'crm' | 'credit' | 'qr' | 'timeclock';
+	current: 'home' | 'crm' | 'credit' | 'qr' | 'tips' | 'timeclock';
 	tabs?: Tab[];
 }
 
@@ -30,6 +30,7 @@ const hub = [
 	{ href: '/crm/', id: 'crm', label: 'สะสมแต้ม' },
 	{ href: '/credit/', id: 'credit', label: 'เครดิตสมาชิก' },
 	{ href: '/qr/', id: 'qr', label: 'รับเงิน QR' },
+	{ href: '/tips/', id: 'tips', label: 'ทิปช่าง' },
 	{ href: '/timeclock/', id: 'timeclock', label: 'ลงเวลา' },
 ] as const;
 ---

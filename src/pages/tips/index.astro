@@ -1,0 +1,319 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const tabs = [
+	{ href: '#overview', label: 'ภาพรวม' },
+	{ href: '#enter', label: '1. ใส่ทิปตอนชำระเงิน' },
+	{ href: '#cash', label: '2. ทิปเงินสด' },
+	{ href: '#closing', label: '3. ปิดร้าน จ่ายทิป' },
+	{ href: '#cases', label: '4. กรณีพิเศษ', accent: 'amber' as const },
+	{ href: '#dont', label: '5. ห้ามทำ' },
+];
+---
+
+<GuideLayout
+	title="คู่มือแคชเชียร์ BillioNail — ทิปช่าง"
+	description="คู่มือแคชเชียร์ ใส่ทิปช่างตอนชำระเงิน แยกจากยอดร้าน และจ่ายทิปคืนช่างเป็นเงินสดตอนปิดร้าน"
+	heading="คู่มือแคชเชียร์ — ทิปช่าง"
+	updated="อัปเดต 19 ต.ค. 2026"
+	current="tips"
+	tabs={tabs}
+>
+	<section class="hero">
+		<span class="hero__badge">ใหม่ · ใช้ทุกสาขา</span>
+		<h2>ทิปเป็นของช่าง ไม่ใช่ยอดร้าน</h2>
+		<p>
+			ลูกค้าจะให้ทิปช่าง ใส่ในช่อง <strong>ทิปช่าง</strong> ตอนชำระเงิน
+			ระบบเก็บทิปแยกจากยอดขาย <strong>ไม่รวมในยอดร้าน ไม่เข้าค่าคอม</strong><br />
+			ตอนปิดร้าน แคชเชียร์<strong>จ่ายทิปคืนช่างเป็นเงินสด</strong> แล้วกด <strong>จ่ายแล้ว</strong> ในระบบ
+		</p>
+		<span class="hero__mark" aria-hidden="true">💝</span>
+	</section>
+
+	<section id="overview" class="grid grid-3">
+		<div class="card">
+			<div>
+				<div class="icon-box">1</div>
+				<h3>ทิปโอน / รูดบัตร</h3>
+				<p>ใส่ในช่อง ทิปช่าง ลูกค้าจ่ายรวมกับบิลได้เลย QR บนจอรวมทิปให้เอง</p>
+			</div>
+			<div class="card-foot">ใส่ในระบบ</div>
+		</div>
+		<div class="card amber">
+			<div>
+				<div class="icon-box amber">2</div>
+				<h3>ทิปเงินสด</h3>
+				<p>ลูกค้าให้ช่างโดยตรง ไม่ต้องใส่ในระบบ ไม่ต้องผ่านลิ้นชักร้าน</p>
+			</div>
+			<div class="card-foot amber">ไม่ต้องบันทึก</div>
+		</div>
+		<div class="card emerald">
+			<div>
+				<div class="icon-box emerald">3</div>
+				<h3>ปิดร้าน จ่ายคืนช่าง</h3>
+				<p>ดูยอดทิปของช่างแต่ละคนในหน้ารายงาน จ่ายเป็นเงินสด แล้วกด จ่ายแล้ว</p>
+			</div>
+			<div class="card-foot emerald">ทุกวัน</div>
+		</div>
+	</section>
+
+	<section id="enter" class="section">
+		<div class="section-head">
+			<span class="num">1</span>
+			<div>
+				<h2>ใส่ทิปตอนชำระเงิน</h2>
+				<p>ใช้ได้เมื่อลูกค้าจ่ายด้วย QR Code, QR Code บริษัท หรือบัตรเครดิต</p>
+			</div>
+		</div>
+		<div class="grid grid-2">
+			<div class="panel">
+				<h4>📱 ลำดับ</h4>
+				<ol class="steps">
+					<li>ใส่บริการ เลือกช่าง ใส่เบอร์ลูกค้า ตามปกติ</li>
+					<li>เลือกวิธีชำระ <strong>QR Code</strong>, <strong>QR Code บริษัท</strong> หรือ <strong>บัตรเครดิต</strong></li>
+					<li>ที่หัวข้อ <strong>ทิปช่าง</strong> กด <strong>+ ใส่ทิป</strong></li>
+					<li>ใส่ยอดทิป<strong>ในช่องของช่างที่ลูกค้าบอก</strong> (เป็นบาท เช่น 100) ช่างหลายคนใส่แยกกันได้</li>
+					<li>ดูยอดด้านล่าง: <strong>ยอดสุทธิ</strong> = ค่าบริการ · <strong>ทิปช่าง (ไม่รวมยอดร้าน)</strong> = ทิป · ปุ่มชำระเงิน = ยอดที่ลูกค้าจ่ายทั้งหมด</li>
+					<li>กด <strong>ชำระเงิน</strong> แล้วรับเงินตามปกติ</li>
+				</ol>
+			</div>
+			<div class="panel emerald">
+				<h4>💡 จำสั้นๆ</h4>
+				<ul class="clean">
+					<li>จ่าย QR: QR บนจอ<strong>รวมทิปให้แล้ว</strong> ลูกค้าโอนครั้งเดียว สลิปก็ผ่าน</li>
+					<li>หน้าตรวจสลิปจะบอกว่า <strong>ค่าบริการ ฿… + ทิปช่าง ฿…</strong></li>
+					<li>จ่ายบัตร: รูดยอดรวม (ค่าบริการ + ทิป) ตามปุ่มชำระเงิน</li>
+					<li>ทิปใส่ได้เฉพาะช่างที่อยู่ในบิลนี้</li>
+					<li>ไม่ต้องใส่หมายเหตุเรื่องทิปเอง ระบบเก็บให้</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="grid grid-2" style="margin-top: 0.85rem">
+			<figure class="shot">
+				<button
+					type="button"
+					data-lightbox
+					data-src="/images/tips/screen-1-enter.png"
+					data-title="ใส่ยอดทิปในช่องของช่าง"
+				>
+					<img
+						src="/images/tips/screen-1-enter.png"
+						width="656"
+						height="188"
+						alt="หัวข้อทิปช่าง มีชื่อช่างและช่องใส่ยอด 100 บาท"
+					/>
+				</button>
+				<figcaption>สเต็ป 4: ใส่ยอดทิปในช่องของช่าง</figcaption>
+			</figure>
+			<figure class="shot">
+				<button
+					type="button"
+					data-lightbox
+					data-src="/images/tips/screen-2-total.png"
+					data-title="ยอดสุทธิคือค่าบริการ ทิปแยกบรรทัด ปุ่มชำระเงินคือยอดที่ลูกค้าจ่ายทั้งหมด"
+				>
+					<img
+						src="/images/tips/screen-2-total.png"
+						width="712"
+						height="524"
+						alt="ยอดสุทธิ 350 บาท ทิปช่างไม่รวมยอดร้าน บวก 100 บาท ปุ่มชำระเงิน 450 บาท"
+					/>
+				</button>
+				<figcaption>สเต็ป 5: ยอดสุทธิ ฿350 + ทิป ฿100 = ลูกค้าจ่าย ฿450</figcaption>
+			</figure>
+		</div>
+
+		<div class="grid grid-2" style="margin-top: 0.85rem">
+			<figure class="shot">
+				<button
+					type="button"
+					data-lightbox
+					data-src="/images/tips/screen-4-slip.png"
+					data-title="จ่าย QR: QR บนจอรวมทิปแล้ว (QR ในรูปนี้เบลอไว้)"
+				>
+					<img
+						src="/images/tips/screen-4-slip.png"
+						width="716"
+						height="1090"
+						alt="หน้าตรวจสลิป ยอดที่ต้องได้รับ 450 บาท ค่าบริการ 350 บาท บวกทิปช่าง 100 บาท และ QR ที่เบลอไว้"
+					/>
+				</button>
+				<figcaption>จ่าย QR: ยอดรวมทิปแล้ว ตรวจสลิปตามปกติ (QR ในรูปนี้เบลอไว้)</figcaption>
+			</figure>
+			<div class="panel sky">
+				<h4>🧾 หลังบันทึกการขาย</h4>
+				<ul class="clean">
+					<li>ข้อความ <strong>ขายสำเร็จ</strong> จะบอกยอด <strong>ทิปช่าง ฿…</strong> ต่อท้าย</li>
+					<li>ในรายละเอียดบิล (หน้ารายงาน) มีกล่อง <strong>ทิปช่าง</strong> บอกว่าทิปของใคร จ่ายแล้วหรือยัง</li>
+					<li>ช่างดูทิปของตัวเองได้ที่หน้า <strong>รายได้ของฉัน</strong></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section id="cash" class="section">
+		<div class="section-head">
+			<span class="num amber">2</span>
+			<div>
+				<h2>ทิปเงินสด</h2>
+				<p>ไม่ต้องใส่ในระบบ</p>
+			</div>
+		</div>
+		<div class="grid grid-2">
+			<div class="panel amber">
+				<h4>💵 ลูกค้าให้ทิปเป็นเงินสด</h4>
+				<ul class="clean">
+					<li>ให้ลูกค้า<strong>ยื่นให้ช่างโดยตรง</strong></li>
+					<li>บิลที่จ่ายเงินสด กด + ใส่ทิป จะขึ้นข้อความ <strong>ทิปเงินสดให้ช่างโดยตรง ไม่ต้องใส่ในระบบ</strong> และไม่มีช่องให้ใส่</li>
+					<li>ห้ามเอาทิปเงินสดใส่ลิ้นชักร้าน</li>
+				</ul>
+			</div>
+			<figure class="shot">
+				<button
+					type="button"
+					data-lightbox
+					data-src="/images/tips/screen-3-cash.png"
+					data-title="บิลเงินสด: ทิปเงินสดให้ช่างโดยตรง ไม่ต้องใส่ในระบบ"
+				>
+					<img
+						src="/images/tips/screen-3-cash.png"
+						width="656"
+						height="80"
+						alt="ข้อความ ทิปเงินสดให้ช่างโดยตรง ไม่ต้องใส่ในระบบ"
+					/>
+				</button>
+				<figcaption>บิลเงินสด: ไม่มีช่องใส่ทิป</figcaption>
+			</figure>
+		</div>
+	</section>
+
+	<section id="closing" class="section">
+		<div class="section-head">
+			<span class="num emerald">3</span>
+			<div>
+				<h2>ปิดร้าน จ่ายทิปคืนช่าง</h2>
+				<p>ทำทุกวันก่อนปิดร้าน</p>
+			</div>
+		</div>
+		<div class="grid grid-2">
+			<div class="panel emerald">
+				<h4>🌙 ลำดับ</h4>
+				<ol class="steps">
+					<li>เปิด <strong>รายงาน</strong> → แท็บ <strong>ทิปช่าง</strong> (เลือกวันนี้)</li>
+					<li>ตาราง <strong>จ่ายทิปคืนช่าง (เงินสด)</strong> บอกยอด<strong>ยังไม่จ่าย</strong>ของช่างแต่ละคน</li>
+					<li>นับเงินสดตามยอด ยื่นให้ช่างคนนั้น</li>
+					<li>กด <strong>จ่ายแล้ว ฿…</strong> ในแถวของช่าง → ดูชื่อกับยอดในหน้าต่างยืนยัน → กด <strong>จ่ายแล้ว</strong></li>
+					<li>แถวนั้นขึ้น <strong>จ่ายแล้ว · ชื่อคุณ · เวลา</strong> ช่องยังไม่จ่ายกลายเป็น -</li>
+				</ol>
+				<p class="note">กด จ่ายแล้ว <strong>หลังยื่นเงินให้ช่างแล้วเท่านั้น</strong> ระบบเก็บชื่อคนกดและเวลาไว้</p>
+			</div>
+			<figure class="shot">
+				<button type="button" data-lightbox data-src="/images/tips/screen-5-owed.png" data-title="ยอดทิปที่ยังไม่จ่ายของช่างแต่ละคน">
+					<img src="/images/tips/screen-5-owed.png" width="1356" height="257" alt="ตารางจ่ายทิปคืนช่าง ช่างหนึ่งคน ทิปทั้งหมด 100 บาท ยังไม่จ่าย 100 บาท และปุ่มจ่ายแล้ว 100 บาท" />
+				</button>
+				<figcaption>สเต็ป 2: ยอดที่ยังไม่จ่ายของช่างแต่ละคน</figcaption>
+			</figure>
+		</div>
+		<div class="grid grid-2" style="margin-top: 0.85rem">
+			<figure class="shot">
+				<button type="button" data-lightbox data-src="/images/tips/screen-6-confirm.png" data-title="ยืนยันการจ่ายทิป: ดูชื่อช่างกับยอดให้ตรงกับเงินที่ยื่นให้">
+					<img src="/images/tips/screen-6-confirm.png" width="600" height="405" alt="หน้าต่างยืนยันการจ่ายทิป จ่ายเงินสดให้ช่าง 100 บาท ปุ่มยกเลิกและจ่ายแล้ว" />
+				</button>
+				<figcaption>สเต็ป 4: ดูชื่อและยอดให้ตรง แล้วกด จ่ายแล้ว</figcaption>
+			</figure>
+			<figure class="shot">
+				<button type="button" data-lightbox data-src="/images/tips/screen-7-paid.png" data-title="จ่ายแล้ว: ระบบบันทึกชื่อคนจ่ายและเวลา">
+					<img src="/images/tips/screen-7-paid.png" width="1776" height="254" alt="แถวของช่างขึ้นจ่ายแล้ว พร้อมชื่อคนจ่ายและเวลา" />
+				</button>
+				<figcaption>สเต็ป 5: จ่ายแล้ว พร้อมชื่อคนจ่ายและเวลา (ปุ่มยกเลิกรอบล่าสุดเห็นเฉพาะเจ้าของร้าน)</figcaption>
+			</figure>
+		</div>
+	</section>
+
+	<section id="cases" class="section">
+		<div class="section-head">
+			<span class="num indigo">4</span>
+			<div>
+				<h2>กรณีพิเศษ</h2>
+				<p>เรื่องที่อาจเจอหน้าเคาน์เตอร์</p>
+			</div>
+		</div>
+		<div class="grid">
+			<details class="faq" open>
+				<summary><span style="color:var(--brand-600)">Q:</span> ขึ้นคำเตือน "บันทึกทิปไม่สำเร็จ"?</summary>
+				<div class="faq-body">
+					<p>
+						บิลบันทึกแล้ว <strong>ห้ามกดขายซ้ำ</strong> ยอดทิปถูกจดไว้ในหมายเหตุบิลแล้ว ให้<strong>แจ้งเจ้าของร้าน</strong>
+						แล้วจ่ายทิปให้ช่างตามหมายเหตุนั้น
+					</p>
+				</div>
+			</details>
+			<details class="faq">
+				<summary><span style="color:var(--brand-600)">Q:</span> ช่องทิปขึ้นกรอบแดง กดชำระเงินไม่ได้?</summary>
+				<div class="faq-body">
+					<p>ยอดที่พิมพ์ไม่ใช่ตัวเลขที่ถูกต้อง แก้เป็นตัวเลขบาท เช่น <strong>100</strong> หรือ <strong>50.50</strong> ไม่มีทิปให้ลบช่องนั้นออก</p>
+				</div>
+			</details>
+			<details class="faq">
+				<summary><span style="color:var(--brand-600)">Q:</span> พักบิลไว้แล้วเรียกบิลกลับมา ทิปหายไป?</summary>
+				<div class="faq-body">
+					<p>ใช่ ระบบไม่เก็บทิปไว้กับบิลที่พัก กันทิปติดไปบิลลูกค้าคนอื่น ให้<strong>ใส่ทิปใหม่ตอนชำระเงิน</strong></p>
+				</div>
+			</details>
+			<details class="faq">
+				<summary><span style="color:var(--brand-600)">Q:</span> ลูกค้าจ่าย Credit / แพ็กเกจ แล้วจ่ายส่วนที่เหลือด้วย QR?</summary>
+				<div class="faq-body">
+					<p>
+						ใส่ทิปได้ ทิปจะรวมไปกับยอดส่วนที่จ่ายด้วย QR · ถ้าตัด Credit ครบทั้งบิล ไม่มีส่วนที่จ่าย QR ให้ลูกค้าให้ทิปช่างเป็นเงินสดโดยตรง
+					</p>
+				</div>
+			</details>
+			<details class="faq">
+				<summary><span style="color:var(--brand-600)">Q:</span> ลูกค้าโอนทิปแยกมาทีหลัง หลังบันทึกบิลไปแล้ว?</summary>
+				<div class="faq-body">
+					<p>ระบบใส่ทิปย้อนหลังในบิลที่บันทึกแล้วไม่ได้ <strong>แจ้งเจ้าของร้าน</strong> พร้อมบอกชื่อช่าง ยอด และเวลาที่ลูกค้าโอน</p>
+				</div>
+			</details>
+			<details class="faq">
+				<summary><span style="color:var(--brand-600)">Q:</span> กดจ่ายแล้วผิดคน หรือยังไม่ได้ยื่นเงินจริง?</summary>
+				<div class="faq-body">
+					<p>แจ้งเจ้าของร้าน เจ้าของร้านกด <strong>ยกเลิกรอบล่าสุด</strong> ให้ได้ แล้วค่อยกดจ่ายใหม่ให้ถูก</p>
+				</div>
+			</details>
+			<details class="faq">
+				<summary><span style="color:var(--brand-600)">Q:</span> ลืมกดจ่ายแล้วเมื่อวาน?</summary>
+				<div class="faq-body">
+					<p>แคชเชียร์เลือก <strong>เมื่อวาน</strong> ในหน้ารายงาน แล้วกดจ่ายแล้วได้ เก่ากว่านั้นแจ้งเจ้าของร้าน</p>
+				</div>
+			</details>
+		</div>
+	</section>
+
+	<section id="dont" class="section">
+		<div class="section-head">
+			<span class="num rose">5</span>
+			<div>
+				<h2>ห้ามทำ</h2>
+				<p>กันทิปไปปนกับยอดร้าน</p>
+			</div>
+		</div>
+		<div class="alert">
+			<h4>🛑 กฎเหล็กเรื่องทิป</h4>
+			<div class="grid grid-3">
+				<div class="card soft-red">
+					<h3>ห้ามใส่ทิปเป็นบริการ</h3>
+					<p>ห้ามเพิ่มรายการ หรือแก้ราคาบริการเพื่อรวมทิป ทิปจะไปเป็นยอดร้านและค่าคอม</p>
+				</div>
+				<div class="card soft-red">
+					<h3>ห้ามกดจ่ายก่อนยื่นเงิน</h3>
+					<p>กด จ่ายแล้ว หลังยื่นเงินสดให้ช่างจริงเท่านั้น ชื่อคนกดติดอยู่ในระบบ</p>
+				</div>
+				<div class="card soft-red">
+					<h3>ห้ามเก็บทิปเงินสดเข้าร้าน</h3>
+					<p>ทิปเงินสดให้ช่างโดยตรง ไม่ผ่านลิ้นชัก ไม่ใส่ในระบบ</p>
+				</div>
+			</div>
+		</div>
+	</section>
+</GuideLayout>
